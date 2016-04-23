@@ -21,11 +21,19 @@ public class PlayerController: MonoBehaviour
     }
 
     [SerializeField]
-    private float _jumpSpeed = 10;
-    public float JumpSpeed
+    private float _jumpFirstSpeed = 10;
+    public float JumpFirstSpeed
     {
-        get { return this._jumpSpeed; }
-        set { this._jumpSpeed = value; }
+        get { return this._jumpFirstSpeed; }
+        set { this._jumpFirstSpeed = value; }
+    }
+
+    [SerializeField]
+    private float _jumpHoldSpeed = 10;
+    public float JumpHoldSpeed
+    {
+        get { return this._jumpHoldSpeed; }
+        set { this._jumpHoldSpeed = value; }
     }
 
     [SerializeField]
@@ -67,7 +75,13 @@ public class PlayerController: MonoBehaviour
     
     private CharacterController cc;
     private Vector3 dir;
-    private float h;
+    private float h,v ;
+
+	private GameObject playerObj;
+	private Vector3 playerPos;
+
+    private bool _isCanAttackNear = true;
+    private bool _isCanAttackFar = true;
 
     /// <summary>
     /// Awake
@@ -95,13 +109,20 @@ public class PlayerController: MonoBehaviour
         Move();
 
         // 攻撃
-        if (Input.GetButton("Fire1"))
+        if (IsCanAttackNear())
         {
-            AttackNear();
+            if (Input.GetButton("Fire1"))
+            {
+                AttackNear();
+            }
         }
-        else if( Input.GetButton("Fire2") )
+
+        if (IsCanAttackFar())
         {
-            AttackFar();
+            if (Input.GetButton("Fire2"))
+            {
+                AttackFar();
+            }
         }
     }
 
@@ -124,9 +145,7 @@ public class PlayerController: MonoBehaviour
         // 横入力
         h = Input.GetAxis("Horizontal");
         dir.x += h * _accel * Time.deltaTime;
-
         dir.x += -dir.x * _friction * Time.deltaTime;
-
         dir.x = Mathf.Clamp(dir.x, -SpeedMax, SpeedMax);
 
         // Gravity
@@ -138,6 +157,18 @@ public class PlayerController: MonoBehaviour
         else
         {
             dir.y += _gravity * Time.deltaTime;
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                dir.y += _jumpHoldSpeed * Time.deltaTime;
+            }
+        }
+
+        // 縦入力
+        v = Input.GetAxis("Vertical");
+        if( v < 0 )
+        {
+            dir.y += v * 10.0f * _accel * Time.deltaTime;
         }
 
         // Jump
@@ -145,7 +176,7 @@ public class PlayerController: MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                dir.y = _jumpSpeed;
+                dir.y = _jumpFirstSpeed;
                 _jumpCount++;
             }
         }
@@ -180,11 +211,53 @@ public class PlayerController: MonoBehaviour
     }
 
     /// <summary>
+    /// 近距離攻撃を使用できるか
+    /// </summary>
+    /// <returns></returns>
+    bool IsCanAttackNear()
+    {
+        return _isCanAttackNear;
+    }
+
+    /// <summary>
+    /// 遠距離攻撃を使用できるか
+    /// </summary>
+    /// <returns></returns>
+    bool IsCanAttackFar()
+    {
+        return _isCanAttackFar;
+    }
+
+    private IEnumerator ResumeCanAttackNear()
+    {
+        _isCanAttackNear = false;
+        yield return new WaitForSeconds(0.1f);
+
+        _isCanAttackNear = true;
+    }
+
+    private IEnumerator ResumeCanAttackFar()
+    {
+        _isCanAttackFar = false;
+
+        yield return new WaitForSeconds(0.1f);
+
+        _isCanAttackFar = true;
+    }
+
+    /// <summary>
     /// 近距離攻撃
     /// </summary>
     void AttackNear()
     {
-        Debug.Log(this.gameObject.ToString() + " Fire Near!");
+        //Debug.Log(this.gameObject.ToString() + " Fire Near!");
+
+		playerObj = GameObject.Find ("Player");
+		playerPos = playerObj.transform.position;
+		GameObject obj = Instantiate (Resources.Load ("Shell"), playerPos, Quaternion.identity) as GameObject;
+		obj.GetComponent<shell> ().initDir = Vector3.left;
+
+        StartCoroutine("ResumeCanAttackNear");
     }
 
     /// <summary>
@@ -192,6 +265,14 @@ public class PlayerController: MonoBehaviour
     /// </summary>
     void AttackFar()
     {
-        Debug.Log(this.gameObject.ToString() + " Fire Far!");
+        //Debug.Log(this.gameObject.ToString() + " Fire Far!");
+
+		playerObj = GameObject.Find ("Player");
+		playerPos = playerObj.transform.position;
+		GameObject obj = Instantiate (Resources.Load ("Shell"), playerPos, Quaternion.identity) as GameObject;
+		obj.GetComponent<shell> ().initDir = Vector3.right;
+
+        StartCoroutine("ResumeCanAttackFar");
+
     }
 }
