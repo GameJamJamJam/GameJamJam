@@ -26,6 +26,21 @@ public class enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		mLife = Life;
+
+		switch (EnemyType) {
+		case eEnemyType.Normal:
+			break;
+		case eEnemyType.NormalRange:
+			break;
+		case eEnemyType.Fly:
+			GetComponent<Rigidbody> ().useGravity = false;
+			break;
+		case eEnemyType.FlyRange:
+			GetComponent<Rigidbody> ().useGravity = false;
+
+			break;
+
+		}
 	}
 	
 	// Update is called once per frame
@@ -34,15 +49,40 @@ public class enemy : MonoBehaviour {
 		if (mMoveTimer < 0.0f) {
 			mMoveTimer += cMoveTime;
 
-			Vector3 dir = Vector3.right;
-			int rand = Random.Range (0, 2);
-			if (rand == 0) {
-				dir = Vector3.left;
-			}
+			switch (EnemyType) {
+			case eEnemyType.Normal:
+				updateMoveNormal ();
 
-			GetComponent<Rigidbody> ().AddForce (dir * Spd, ForceMode.Impulse);
+				break;
+			case eEnemyType.NormalRange:
+				break;
+			case eEnemyType.Fly:
+				updateMoveFly ();
+
+				break;
+			case eEnemyType.FlyRange:
+				break;
+
+			}
 		}
 
+	}
+
+	void updateMoveNormal()
+	{
+		Vector3 dir = Vector3.right;
+		int rand = Random.Range (0, 2);
+		if (rand == 0) {
+			dir = Vector3.left;
+		}
+
+		GetComponent<Rigidbody> ().AddForce (dir * Spd, ForceMode.Impulse);
+
+	}
+
+	void updateMoveFly()
+	{
+		updateMoveNormal ();
 	}
 
 	void OnTriggerEnter(Collider other)

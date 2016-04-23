@@ -3,6 +3,7 @@ using System.Collections;
 
 public class spawner : MonoBehaviour {
 	public float SpawnTime = 3.0f;
+	public enemy.eEnemyType SpawnEnemyType;
 
 
 	private float mSpawnTimer;
@@ -20,6 +21,8 @@ public class spawner : MonoBehaviour {
 			mSpawnTimer += SpawnTime;
 
 			GameObject obj = Instantiate (Resources.Load ("Enemy"), transform.position, Quaternion.identity) as GameObject;
+
+			obj.GetComponent<enemy> ().EnemyType = SpawnEnemyType;
 		}
 	}
 }
