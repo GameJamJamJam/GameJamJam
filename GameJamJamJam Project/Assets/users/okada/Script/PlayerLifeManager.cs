@@ -30,7 +30,7 @@ public class PlayerLifeManager : MonoBehaviour {
     /// <param name="value"></param>
     public void ApplayDamage( float value )
     {
-
+        _life -= value;
 
     }
 }
