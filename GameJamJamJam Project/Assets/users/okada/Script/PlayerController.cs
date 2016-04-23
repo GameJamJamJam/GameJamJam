@@ -56,7 +56,7 @@ public class PlayerController: MonoBehaviour
         // 各ステータス
         for( int i=0; i < (int)item.eExpType.Max; i++ )
         {
-            Level.Add( 0 );
+            Levels.Add( 0 );
         }
     }
     
@@ -103,7 +103,7 @@ public class PlayerController: MonoBehaviour
     /// <param name="expType"></param>
     public void LevelUpStatus( item.eExpType expType )
     {
-        Level[(int)expType]++;
+        Levels[(int)expType]++;
         Debug.Log(this.gameObject.ToString() + " Level Up :" + expType.ToString());
     }
 
