@@ -182,7 +182,7 @@ public class PlayerController: MonoBehaviour
         // Jump
         if ( IsCanJump() )
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+			if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
             {
                 dir.y = _jumpFirstSpeed;
                 _jumpCount++;
@@ -262,8 +262,8 @@ public class PlayerController: MonoBehaviour
 
 		playerObj = GameObject.Find ("Player");
 		playerPos = playerObj.transform.position;
-		GameObject obj = Instantiate (Resources.Load ("Shell"), playerPos, Quaternion.identity) as GameObject;
-		obj.GetComponent<shell> ().initDir = Vector3.left;
+		GameObject obj = Instantiate (Resources.Load ("ShellPlNear"), playerPos, Quaternion.identity) as GameObject;
+		obj.GetComponent<shellPlNear> ().initDir = Vector3.left;
 
         StartCoroutine("ResumeCanAttackNear");
     }
@@ -277,8 +277,8 @@ public class PlayerController: MonoBehaviour
 
 		playerObj = GameObject.Find ("Player");
 		playerPos = playerObj.transform.position;
-		GameObject obj = Instantiate (Resources.Load ("Shell"), playerPos, Quaternion.identity) as GameObject;
-		obj.GetComponent<shell> ().initDir = Vector3.right;
+		GameObject obj = Instantiate (Resources.Load ("ShellPlFar"), playerPos, Quaternion.identity) as GameObject;
+		obj.GetComponent<shellPlFar> ().initDir = Vector3.right;
 
         StartCoroutine("ResumeCanAttackFar");
 
