@@ -103,12 +103,9 @@ public class enemy : MonoBehaviour {
 	void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.tag == "Player") {
-			Debug.Log ("Hit to Pl");
-
-//			other.gameObject.GetComponent<
-			//todo test death
-
 			other.gameObject.GetComponent<PlayerLifeManager> ().ApplayDamage (1.0f);
+
+		//	Debug.Log ("life "+other.gameObject.GetComponent<PlayerLifeManager> ().Life);
 
 			Destroy(this.gameObject);
 		}
