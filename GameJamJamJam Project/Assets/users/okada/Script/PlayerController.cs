@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController: MonoBehaviour
 {
-
-    
-
     [SerializeField]
     private float _speed = 6;
     public float Speed
@@ -13,7 +11,6 @@ public class PlayerController: MonoBehaviour
         get { return this._speed; }
         set { this._speed = value; }
     }
-
 
     [SerializeField]
     private float _jumpSpeed = 10;
@@ -31,10 +28,38 @@ public class PlayerController: MonoBehaviour
         set { this._gravity = value; }
     }
 
+    public int SumLevel
+    {
+        get
+        {
+            int sum = 0;
+            foreach( var exp in Levels )
+            {
+                sum += exp;
+            }
+            return sum;
+        }
+    }
+
+    /// <summary>
+    /// 各ステータス
+    /// </summary>
+    public List<int> Levels = new List<int>();
+
     private CharacterController cc;
     private Vector3 dir;
     private float h;
 
+    
+    void Awake()
+    {
+        // 各ステータス
+        for( int i=0; i < (int)item.eExpType.Max; i++ )
+        {
+            Levels.Add( 0 );
+        }
+    }
+    
     // Use this for initialization
     void Start()
     {
@@ -73,6 +98,16 @@ public class PlayerController: MonoBehaviour
     }
 
     /// <summary>
+    /// レベルアップ
+    /// </summary>
+    /// <param name="expType"></param>
+    public void LevelUpStatus( item.eExpType expType )
+    {
+        Levels[(int)expType]++;
+        Debug.Log(this.gameObject.ToString() + " Level Up :" + expType.ToString());
+    }
+
+    /// <summary>
     /// 近距離攻撃
     /// </summary>
     void AttackNear()
@@ -86,6 +121,5 @@ public class PlayerController: MonoBehaviour
     void AttackFar()
     {
         Debug.Log(this.gameObject.ToString() + " Fire Far!");
-
     }
 }
