@@ -102,6 +102,7 @@ public class enemy : MonoBehaviour {
 	{
 		for (int i = 0; i < ItemNum; i++) {
 			GameObject obj = Instantiate (Resources.Load ("ItemExp"), transform.position +new Vector3(0.01f * Random.Range(-1.0f, 1.0f) ,0.01f * i,0.0f), Quaternion.identity) as GameObject;
+			obj.transform.parent = GameObject.Find ("Items").gameObject.transform;
 			obj.GetComponent<item> ().ExpType = ExpType;
 		}
 	}
