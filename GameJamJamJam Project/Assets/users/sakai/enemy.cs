@@ -48,7 +48,12 @@ public class enemy : MonoBehaviour {
 			break;
 		}
 
+		updateColor ();
 
+	}
+
+	void updateColor()
+	{
 		foreach (GameObject obj in DrawObjes) {
 			obj.SetActive (false);
 		}
@@ -75,6 +80,18 @@ public class enemy : MonoBehaviour {
 				break;
 			}
 		}
+
+#if UNITY_EDITOR
+		for( int i = (int)item.eExpType.Cam; i < (int)item.eExpType.Max; i++)
+		{
+			if( Input.GetKeyDown(i.ToString()) )
+			{
+				ExpType = (item.eExpType)i;
+				updateColor();
+			}
+		}
+#endif
+
 	}
 
 	void updateMoveNormal()
