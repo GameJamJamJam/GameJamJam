@@ -20,6 +20,9 @@ public class status : MonoBehaviour {
 		bulletNum = 100;
 
 		this.expArray = new exp[(int)item.eExpType.Max];
+		for (int i = 0; i < expArray.Length; i++) {
+			expArray [i] = new exp ();
+		}
 	}
 	
 	// Update is called once per frame

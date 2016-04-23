@@ -23,6 +23,8 @@ public class spawner : MonoBehaviour {
 	void Update () {
 		mSpawnTimer -= Time.deltaTime;
 
+
+
 		if (mSpawnTimer < 0) {
 			mSpawnTimer += SpawnTime;
 			GameObject obj = Instantiate (Resources.Load ("Enemy"), transform.position, Quaternion.identity) as GameObject;
