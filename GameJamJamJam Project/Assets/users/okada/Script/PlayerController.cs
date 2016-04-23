@@ -65,6 +65,14 @@ public class PlayerController: MonoBehaviour
         }
     }
 
+    public bool IsRight
+    {
+        get
+        {
+            return dir.x > 0;
+        }
+    }
+
     /// <summary>
     /// 各ステータス
     /// </summary>
