@@ -3,11 +3,25 @@ using System.Collections;
 
 public class item : MonoBehaviour {
 
+	public enum eExpType
+	{
+		Cam = 0,
+		Spd,
+		Jump,
+		MeleePow,
+		MeleeHit,
+		ShotPow,
+		ShotBullet,
+		Max,
+	}
+
+	public eExpType ExpType = eExpType.Cam;
 
 	public bool IsHeal = false;
 
 	// Use this for initialization
 	void Start () {
+		
 	}
 	
 	// Update is called once per frame

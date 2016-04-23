@@ -6,7 +6,7 @@ public class enemy : MonoBehaviour {
 	public int Life = 1;
 	public float Spd = 1.0f;
 	public int ItemNum = 10;
-
+	public item.eExpType ExpType = item.eExpType.Cam;
 
 	public enum eEnemyType
 	{
@@ -26,7 +26,6 @@ public class enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		mLife = Life;
-
 		switch (EnemyType) {
 		case eEnemyType.Normal:
 			break;
@@ -37,10 +36,10 @@ public class enemy : MonoBehaviour {
 			break;
 		case eEnemyType.FlyRange:
 			GetComponent<Rigidbody> ().useGravity = false;
-
 			break;
-
 		}
+
+
 	}
 	
 	// Update is called once per frame
@@ -48,24 +47,19 @@ public class enemy : MonoBehaviour {
 		mMoveTimer -= Time.deltaTime;
 		if (mMoveTimer < 0.0f) {
 			mMoveTimer += cMoveTime;
-
 			switch (EnemyType) {
 			case eEnemyType.Normal:
 				updateMoveNormal ();
-
 				break;
 			case eEnemyType.NormalRange:
 				break;
 			case eEnemyType.Fly:
 				updateMoveFly ();
-
 				break;
 			case eEnemyType.FlyRange:
 				break;
-
 			}
 		}
-
 	}
 
 	void updateMoveNormal()
@@ -108,6 +102,7 @@ public class enemy : MonoBehaviour {
 	{
 		for (int i = 0; i < ItemNum; i++) {
 			GameObject obj = Instantiate (Resources.Load ("ItemExp"), transform.position +new Vector3(0.01f * Random.Range(-1.0f, 1.0f) ,0.01f * i,0.0f), Quaternion.identity) as GameObject;
+			obj.GetComponent<item> ().ExpType = ExpType;
 		}
 	}
 
