@@ -80,6 +80,9 @@ public class PlayerController: MonoBehaviour
 	private GameObject playerObj;
 	private Vector3 playerPos;
 
+    private bool _isCanAttackNear = true;
+    private bool _isCanAttackFar = true;
+
     /// <summary>
     /// Awake
     /// </summary>
@@ -106,13 +109,20 @@ public class PlayerController: MonoBehaviour
         Move();
 
         // 攻撃
-        if (Input.GetButton("Fire1"))
+        if (IsCanAttackNear())
         {
-            AttackNear();
+            if (Input.GetButton("Fire1"))
+            {
+                AttackNear();
+            }
         }
-        else if( Input.GetButton("Fire2") )
+
+        if (IsCanAttackFar())
         {
-            AttackFar();
+            if (Input.GetButton("Fire2"))
+            {
+                AttackFar();
+            }
         }
     }
 
@@ -201,6 +211,41 @@ public class PlayerController: MonoBehaviour
     }
 
     /// <summary>
+    /// 近距離攻撃を使用できるか
+    /// </summary>
+    /// <returns></returns>
+    bool IsCanAttackNear()
+    {
+        return _isCanAttackNear;
+    }
+
+    /// <summary>
+    /// 遠距離攻撃を使用できるか
+    /// </summary>
+    /// <returns></returns>
+    bool IsCanAttackFar()
+    {
+        return _isCanAttackFar;
+    }
+
+    private IEnumerator ResumeCanAttackNear()
+    {
+        _isCanAttackNear = false;
+        yield return new WaitForSeconds(0.1f);
+
+        _isCanAttackNear = true;
+    }
+
+    private IEnumerator ResumeCanAttackFar()
+    {
+        _isCanAttackFar = false;
+
+        yield return new WaitForSeconds(0.1f);
+
+        _isCanAttackFar = true;
+    }
+
+    /// <summary>
     /// 近距離攻撃
     /// </summary>
     void AttackNear()
@@ -211,6 +256,8 @@ public class PlayerController: MonoBehaviour
 		playerPos = playerObj.transform.position;
 		GameObject obj = Instantiate (Resources.Load ("Shell"), playerPos, Quaternion.identity) as GameObject;
 		obj.GetComponent<shell> ().initDir = Vector3.left;
+
+        StartCoroutine("ResumeCanAttackNear");
     }
 
     /// <summary>
@@ -224,5 +271,8 @@ public class PlayerController: MonoBehaviour
 		playerPos = playerObj.transform.position;
 		GameObject obj = Instantiate (Resources.Load ("Shell"), playerPos, Quaternion.identity) as GameObject;
 		obj.GetComponent<shell> ().initDir = Vector3.right;
-	}
+
+        StartCoroutine("ResumeCanAttackFar");
+
+    }
 }
