@@ -2694,18 +2694,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: _jumpSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: _jumpHoldSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: _gravity
-      value: -20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
   m_IsPrefabParent: 0
