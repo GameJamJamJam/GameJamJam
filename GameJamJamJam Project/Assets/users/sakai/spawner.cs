@@ -13,11 +13,13 @@ public class spawner : MonoBehaviour {
 
 	private item.eExpType mExpType;
 
+	private spawnMng mSpawnMng;
 	// Use this for initialization
 	void Start () {
 		mSpawnTimer = SpawnTime;
 		mSpawnChangeCount = SpawnChangeNum;
 		randExpType ();
+		mSpawnMng = GameObject.Find ("Spawners").GetComponent<spawnMng> ();
 	}
 	
 	// Update is called once per frame
@@ -28,17 +30,21 @@ public class spawner : MonoBehaviour {
 
 		if (mSpawnTimer < 0) {
 			mSpawnTimer += SpawnTime;
-			GameObject obj = Instantiate (Resources.Load ("Enemy"), transform.position, Quaternion.identity) as GameObject;
-			obj.transform.parent = GameObject.Find ("Enemies").gameObject.transform;
-			obj.GetComponent<enemy> ().ExpType = mExpType;
-			obj.GetComponent<enemy> ().EnemyType = SpawnEnemyType;
-			obj.GetComponent<enemy> ().Life = numCreated * 3;
-			numCreated++;
 
-			mSpawnChangeCount--;
-			if (mSpawnChangeCount <= 0) {
-				mSpawnChangeCount = SpawnChangeNum;
-				randExpType ();
+			if (mSpawnMng.isCanSpawn ()) {
+				mSpawnMng.addEnemyNm ();
+				GameObject obj = Instantiate (Resources.Load ("Enemy"), transform.position, Quaternion.identity) as GameObject;
+				obj.transform.parent = GameObject.Find ("Enemies").gameObject.transform;
+				obj.GetComponent<enemy> ().ExpType = mExpType;
+				obj.GetComponent<enemy> ().EnemyType = SpawnEnemyType;
+				obj.GetComponent<enemy> ().Life = numCreated * 3;
+				numCreated++;
+
+				mSpawnChangeCount--;
+				if (mSpawnChangeCount <= 0) {
+					mSpawnChangeCount = SpawnChangeNum;
+					randExpType ();
+				}
 			}
 		}
 	}

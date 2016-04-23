@@ -23,6 +23,7 @@ public class enemy : MonoBehaviour {
 	private int mLife;
 	private const float cMoveTime = 0.5f;
 	private float mMoveTimer;
+	private spawnMng mSpawnMng;
 
 	//PLの攻撃によるダメージ
 	public void addDamage(int dmgVal){
@@ -57,6 +58,7 @@ public class enemy : MonoBehaviour {
 
 		updateColor ();
 
+		mSpawnMng = GameObject.Find ("Spawners").GetComponent<spawnMng> ();
 	}
 
 	void updateColor()
@@ -141,7 +143,7 @@ public class enemy : MonoBehaviour {
 
 	void OnDestroy()
 	{
-
+		mSpawnMng.subEnemyNm ();
 
 		for (int i = 0; i < ItemNum; i++) {
 			GameObject obj = Instantiate (Resources.Load ("ItemExp"), transform.position +new Vector3(0.01f * Random.Range(-1.0f, 1.0f) ,0.01f * i,0.0f), Quaternion.identity) as GameObject;
