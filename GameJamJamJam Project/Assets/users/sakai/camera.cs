@@ -15,7 +15,7 @@ public class camera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		updateCamLevel ();
 	}
 
 	void updateCamLevel()
@@ -23,7 +23,8 @@ public class camera : MonoBehaviour {
 		int camLevel = mPlCtrl.Levels[(int)item.eExpType.Cam];
 		Vector3 camPos = mPlCtrl.gameObject.transform.position;
 		camPos.z = CamDist [camLevel];
-		mPlCtrl.gameObject.transform.position += camPos;
+
+		Camera.main.transform.position = camPos;
 	}
 
 }
