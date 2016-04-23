@@ -87,6 +87,32 @@ public class PlayerController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move();
+
+        // 攻撃
+        if (Input.GetButton("Fire1"))
+        {
+            AttackNear();
+        }
+        else if( Input.GetButton("Fire2") )
+        {
+            AttackFar();
+        }
+    }
+
+    void LateUpdate()
+    {
+        // 外に出ないように無理やり
+        var pos = this.gameObject.transform.position;
+        pos.z = 0.0f;
+        this.gameObject.transform.position = pos;
+    }
+
+    /// <summary>
+    /// 移動処理
+    /// </summary>
+    void Move()
+    {
         // 横入力
         h = Input.GetAxis("Horizontal");
         dir.x += h * _accel * Time.deltaTime;
@@ -113,14 +139,6 @@ public class PlayerController: MonoBehaviour
 
         cc.Move(dir * Time.deltaTime);
 
-        if (Input.GetButton("Fire1"))
-        {
-            AttackNear();
-        }
-        else if( Input.GetButton("Fire2") )
-        {
-            AttackFar();
-        }
     }
 
     /// <summary>
