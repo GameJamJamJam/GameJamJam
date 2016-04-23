@@ -27,6 +27,10 @@ public class enemy : MonoBehaviour {
 	//PLの攻撃によるダメージ
 	public void addDamage(int dmgVal){
 		mLife -= dmgVal;
+
+		GameObject obj = Instantiate (Resources.Load ("damageEffect"), transform.position +new Vector3(0.0f,1.0f,0.0f), Quaternion.identity) as GameObject;
+		obj.GetComponent<damageEffect> ().damage = dmgVal;
+
 		if (mLife <= 0) {
 			Destroy (this.gameObject);
 		}
