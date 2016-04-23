@@ -4,7 +4,7 @@ using System.Collections;
 public class status : MonoBehaviour {
 
 	// 
-	public float vital = 1.0f;
+	public float vital = 3.0f;
 
 	// Use this for initialization
 	void Start () {

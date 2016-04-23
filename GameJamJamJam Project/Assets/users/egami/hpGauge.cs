@@ -34,7 +34,7 @@ public class hpGauge : MonoBehaviour {
 				lineNum = 1;
 			}
 			for (int i = 0; i < lineNum; i++) {
-				refText.text += "|";
+				refText.text += "☆";
 			}
 		}
 	}
