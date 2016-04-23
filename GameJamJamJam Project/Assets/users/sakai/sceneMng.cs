@@ -28,18 +28,26 @@ public class sceneMng : MonoBehaviour {
 			if(  mDelayTimer < 0 && Input.anyKeyDown)
 			{
 				mDelayTimer = cDelayTime;
-				Application.LoadLevel ("MainGame");
+				Application.LoadLevel ("Scene/MainGame");
 			}
 
 			break;
 		case eSceneChangeType.ToResult:
+
+			GameObject player = GameObject.Find ("Player");
+			if (player) {
+				if (player.GetComponent<PlayerLifeManager> ().Life <= 0) {
+					Application.LoadLevel ("Scene/Result");
+				}
+			}
 			break;
 		case eSceneChangeType.ToTitle:
 			mDelayTimer -= Time.deltaTime;
 			if( mDelayTimer < 0 && Input.anyKeyDown)
 			{
 				mDelayTimer = cDelayTime;
-				Application.LoadLevel ("Title");
+				Debug.Log ("hoge");
+				Application.LoadLevel ("Scene/Title");
 			}
 			break;
 
