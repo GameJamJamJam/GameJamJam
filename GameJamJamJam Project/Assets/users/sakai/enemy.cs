@@ -31,6 +31,9 @@ public class enemy : MonoBehaviour {
 		GameObject obj = Instantiate (Resources.Load ("damageEffect"), transform.position +new Vector3(0.0f,1.0f,0.0f), Quaternion.identity) as GameObject;
 		obj.GetComponent<damageEffect> ().damage = dmgVal;
 
+		GameObject plStatus = GameObject.Find ("SceneMng");
+		plStatus.GetComponent<sceneMng> ().addScore (dmgVal);
+
 		if (mLife <= 0) {
 			Destroy (this.gameObject);
 		}
