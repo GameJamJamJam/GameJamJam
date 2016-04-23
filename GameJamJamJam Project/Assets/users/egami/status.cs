@@ -5,6 +5,7 @@ using AssemblyCSharp;
 public class status : MonoBehaviour {
 
 	// 
+<<<<<<< HEAD
 	public float vital
 	{
 		get;
@@ -20,12 +21,20 @@ public class status : MonoBehaviour {
 		vital = 3.0f;
 
 		this.expArray = new exp[(int)item.eExpType.Max];
+=======
+	public float vital = 3.0f;
+
+	// Use this for initialization
+	void Start () {
+	
+>>>>>>> origin/master
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+<<<<<<< HEAD
 
 	public void OnDamage(){
 		vital -= 1.0f;
@@ -38,4 +47,6 @@ public class status : MonoBehaviour {
 	{
 		expArray[(int)expType].addExp( 1 );
 	}
+=======
+>>>>>>> origin/master
 }
