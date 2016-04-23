@@ -39,6 +39,12 @@ public class status : MonoBehaviour {
 
 	public void AddExp(item.eExpType expType)
 	{
-		expArray[(int)expType].addExp( 1 );
+		// level up?
+		if (expArray [(int)expType].addExp (1)) {
+			GameObject tmpPlayer = GameObject.Find ("Player");
+			if (tmpPlayer) {
+				tmpPlayer.GetComponent<PlayerController>().LevelUpStatus( expType );
+			}
+		}
 	}
 }

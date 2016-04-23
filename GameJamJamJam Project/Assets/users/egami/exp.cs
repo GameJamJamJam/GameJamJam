@@ -14,19 +14,26 @@ namespace AssemblyCSharp
 		{
 			level = 1;
 			next = 7;
-			step = 7;
+			step = next;
 		}
 
-		public void addExp(int value)
+		public bool addExp(int value)
 		{
+			bool levelUp = false;
+
 			total += value;
 			sub += value;
-			if (sub <= next) {
+			if (next <= sub) {
 				level++;
 				sub -= next;
 
-				step += (int)(step * 0.5f);
+				step += (int)(next * 0.5f);
+				next += step;
+
+				levelUp = true;
 			}
+
+			return levelUp;
 		}
 
 	}
