@@ -587,7 +587,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &238274399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,7 +1154,7 @@ Transform:
   - {fileID: 1685128753}
   - {fileID: 1379364045}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &798022194 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 194142, guid: 1fa20b03484245945876eeae22a10986, type: 2}
@@ -1646,6 +1646,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnTime: 5
   SpawnEnemyType: 0
+--- !u!1 &1000094013 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 194534, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
+  m_PrefabInternal: {fileID: 2001489614}
+--- !u!96 &1000094021
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1000094013}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 3618a689b56194c4ba10744f24ecbdf6, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.5
+  m_StartWidth: 0.8
+  m_EndWidth: 0.5
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1 &1008194974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,7 +2307,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &1376533166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,27 +3109,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1725907515}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1735869664 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 182438, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-  m_PrefabInternal: {fileID: 2001489614}
---- !u!95 &1735869665
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1735869664}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 077607474b05bc14398f28f72dac7451, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1769148023
 Prefab:
   m_ObjectHideFlags: 0
@@ -3693,14 +3723,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: Levels.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: LevelUpEffects.Array.size
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 440524, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3733,40 +3755,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 149978, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: LevelUpEffects.Array.data[0]
-      value: 
-      objectReference: {fileID: 100002, guid: 75369bb81385f4904842bf20a51c14a2, type: 2}
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: LevelUpEffects.Array.data[1]
-      value: 
-      objectReference: {fileID: 100002, guid: 0d196ff67d8a80548846abc35b0bc500, type: 2}
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: LevelUpEffects.Array.data[2]
-      value: 
-      objectReference: {fileID: 100002, guid: 76922ef6b8c6d8e499c1c20d31e2d614, type: 2}
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: LevelUpEffects.Array.data[3]
-      value: 
-      objectReference: {fileID: 100002, guid: c5002590278248b4ab043694a53034b8, type: 2}
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: LevelUpEffects.Array.data[4]
-      value: 
-      objectReference: {fileID: 100002, guid: cb71adc5f891c2b44b9e52ef28115c33, type: 2}
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: LevelUpEffects.Array.data[5]
-      value: 
-      objectReference: {fileID: 100002, guid: 5d7eb35dc57220047afd49e78a43e86b, type: 2}
-    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
-      propertyPath: LevelUpEffects.Array.data[6]
-      value: 
-      objectReference: {fileID: 100002, guid: ef05fca565ce26945aae72595b1b5707, type: 2}
-    m_RemovedComponents:
-    - {fileID: 11119612, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2015884913
