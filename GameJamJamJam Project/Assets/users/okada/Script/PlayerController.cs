@@ -33,7 +33,7 @@ public class PlayerController: MonoBehaviour
         get
         {
             int sum = 0;
-            foreach( var exp in Level )
+            foreach( var exp in Levels )
             {
                 sum += exp;
             }
@@ -44,7 +44,7 @@ public class PlayerController: MonoBehaviour
     /// <summary>
     /// 各ステータス
     /// </summary>
-    public List<int> Level = new List<int>();
+    public List<int> Levels = new List<int>();
 
     private CharacterController cc;
     private Vector3 dir;
