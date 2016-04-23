@@ -26,6 +26,9 @@ public class status : MonoBehaviour {
 		magicPower = 100.0f;
 
 		this.expArray = new exp[(int)item.eExpType.Max];
+		for (int i = 0; i < expArray.Length; i++) {
+			expArray [i] = new exp ();
+		}
 	}
 	
 	// Update is called once per frame
