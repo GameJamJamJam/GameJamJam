@@ -16,12 +16,17 @@ public class item : MonoBehaviour {
 	}
 
 	public eExpType ExpType = eExpType.Cam;
+	public GameObject[] DrawObjes = new GameObject[(int)item.eExpType.Max];
 
 	public bool IsHeal = false;
 
 	// Use this for initialization
 	void Start () {
-		
+		foreach (GameObject obj in DrawObjes) {
+			obj.SetActive (false);
+		}
+
+		DrawObjes [(int)ExpType].SetActive (true);
 	}
 	
 	// Update is called once per frame

@@ -7,6 +7,7 @@ public class enemy : MonoBehaviour {
 	public float Spd = 1.0f;
 	public int ItemNum = 10;
 	public item.eExpType ExpType = item.eExpType.Cam;
+	public GameObject[] DrawObjes = new GameObject[(int)item.eExpType.Max];
 
 	public enum eEnemyType
 	{
@@ -39,6 +40,12 @@ public class enemy : MonoBehaviour {
 			break;
 		}
 
+
+		foreach (GameObject obj in DrawObjes) {
+			obj.SetActive (false);
+		}
+
+		DrawObjes [(int)ExpType].SetActive (true);
 
 	}
 	
