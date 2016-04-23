@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using AssemblyCSharp;
 
 public class status : MonoBehaviour {
 
@@ -10,10 +11,15 @@ public class status : MonoBehaviour {
 		private set;
 	}
 
+	public exp[] expArray;
+
+
 
 	// Use this for initialization
 	void Start () {
 		vital = 3.0f;
+
+		this.expArray = new exp[(int)item.eExpType.Max];
 	}
 	
 	// Update is called once per frame
@@ -26,5 +32,10 @@ public class status : MonoBehaviour {
 		if( vital < 0.0f ){
 			vital = 0.0f;
 		}
+	}
+
+	public void AddExp(item.eExpType expType)
+	{
+		expArray[(int)expType].addExp( 1 );
 	}
 }
