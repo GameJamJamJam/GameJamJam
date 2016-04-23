@@ -16,11 +16,19 @@ public class PlayerController: MonoBehaviour
 
 
     [SerializeField]
-    private float _jumpSpeed = 12;
+    private float _jumpSpeed = 10;
     public float JumpSpeed
     {
         get { return this._jumpSpeed; }
         set { this._jumpSpeed = value; }
+    }
+
+    [SerializeField]
+    private float _gravity = -9.8f;
+    public float Gravity
+    {
+        get { return this._gravity; }
+        set { this._gravity = value; }
     }
 
     private CharacterController cc;
@@ -51,7 +59,7 @@ public class PlayerController: MonoBehaviour
                 dir.y = _jumpSpeed;
             }
         }
-        dir.y -= 9f * Time.deltaTime;
+        dir.y += _gravity * Time.deltaTime;
         cc.Move(dir * Time.deltaTime);
 
         if (Input.GetButton("Fire1"))
