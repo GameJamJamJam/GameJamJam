@@ -779,7 +779,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 444200, guid: e19ef9df891d56743b64b1d25ef9eb1b, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e19ef9df891d56743b64b1d25ef9eb1b, type: 2}
@@ -3183,7 +3183,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423224, guid: 3fab33f448357ab42842f842d22528ca, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fab33f448357ab42842f842d22528ca, type: 2}
@@ -3693,6 +3693,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
+      propertyPath: Levels.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
+      propertyPath: LevelUpEffects.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 440524, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3723,12 +3731,40 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440524, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 149978, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
+      propertyPath: LevelUpEffects.Array.data[0]
+      value: 
+      objectReference: {fileID: 100002, guid: 75369bb81385f4904842bf20a51c14a2, type: 2}
+    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
+      propertyPath: LevelUpEffects.Array.data[1]
+      value: 
+      objectReference: {fileID: 100002, guid: 0d196ff67d8a80548846abc35b0bc500, type: 2}
+    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
+      propertyPath: LevelUpEffects.Array.data[2]
+      value: 
+      objectReference: {fileID: 100002, guid: 76922ef6b8c6d8e499c1c20d31e2d614, type: 2}
+    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
+      propertyPath: LevelUpEffects.Array.data[3]
+      value: 
+      objectReference: {fileID: 100002, guid: c5002590278248b4ab043694a53034b8, type: 2}
+    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
+      propertyPath: LevelUpEffects.Array.data[4]
+      value: 
+      objectReference: {fileID: 100002, guid: cb71adc5f891c2b44b9e52ef28115c33, type: 2}
+    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
+      propertyPath: LevelUpEffects.Array.data[5]
+      value: 
+      objectReference: {fileID: 100002, guid: 5d7eb35dc57220047afd49e78a43e86b, type: 2}
+    - target: {fileID: 11430526, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
+      propertyPath: LevelUpEffects.Array.data[6]
+      value: 
+      objectReference: {fileID: 100002, guid: ef05fca565ce26945aae72595b1b5707, type: 2}
     m_RemovedComponents:
     - {fileID: 11119612, guid: 5131474ed73d6004db364688aadd2b40, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5131474ed73d6004db364688aadd2b40, type: 2}

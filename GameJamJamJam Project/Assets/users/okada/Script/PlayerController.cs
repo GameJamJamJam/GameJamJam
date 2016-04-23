@@ -77,6 +77,8 @@ public class PlayerController: MonoBehaviour
     public EventAttack EventAttackNear;
     public EventAttack EventAttackFar;
 
+    public List<GameObject> LevelUpEffects = new List<GameObject>();
+
     /// <summary>
     /// 各ステータス
     /// </summary>
@@ -220,6 +222,9 @@ public class PlayerController: MonoBehaviour
             default:
                 break;
         }
+
+        var effect = Instantiate(LevelUpEffects[(int)expType], transform.position + new Vector3(0, 0, -3.0f), Quaternion.identity) as GameObject;
+        effect.transform.parent = this.gameObject.transform;
     }
 
     /// <summary>
