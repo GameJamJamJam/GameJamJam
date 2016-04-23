@@ -58,6 +58,7 @@
      <Compile Include="Assets\users\sakai\camera.cs" />
      <Compile Include="Assets\users\sakai\enemy.cs" />
      <Compile Include="Assets\users\sakai\item.cs" />
+     <Compile Include="Assets\users\sakai\sceneMng.cs" />
      <Compile Include="Assets\users\sakai\spawner.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
