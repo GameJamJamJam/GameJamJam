@@ -6,14 +6,14 @@ public class PlayerMeshController : MonoBehaviour {
     public PlayerController PlController;
     public CharacterController CharaController;
 
-    public Animation Anim;
+    public Animator Anim;
 
 	// Use this for initialization
 	void Start ()
     {
         PlController = this.gameObject.transform.parent.GetComponent<PlayerController>();
         CharaController = this.gameObject.transform.parent.GetComponent<CharacterController>();
-        //Anim = this.gameObject.GetComponent<Animation>();
+        Anim = this.gameObject.GetComponent<Animator>();
 
         PlController.EventAttackNear += PlayAttackNear;
         PlController.EventAttackFar += PlayAttackFar;
@@ -33,14 +33,16 @@ public class PlayerMeshController : MonoBehaviour {
     void PlayAttackNear()
     {
         //Anim.Play("attack");
-        
+        Anim.SetBool("UseAttack", true);
         StopCoroutine("ResetAnimation");
         StartCoroutine("ResetAnimation");
     }
 
     void PlayAttackFar()
     {
-       // Anim.Play("skill");
+        // Anim.Play("skill");
+
+        Anim.SetBool("UseSkill", true);
         StopCoroutine("ResetAnimation");
         StartCoroutine("ResetAnimation");
     }
@@ -48,8 +50,9 @@ public class PlayerMeshController : MonoBehaviour {
     private IEnumerator ResetAnimation()
     {
         
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
 
-        //Anim.Play("run");
+        Anim.SetBool("UseAttack", false);
+        Anim.SetBool("UseSkill", false);
     }
 }

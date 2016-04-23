@@ -77,6 +77,7 @@
     <Compile Include="Assets\users\egami\levelGauge.cs" />
     <Compile Include="Assets\users\egami\mpGauge.cs" />
     <Compile Include="Assets\users\egami\status.cs" />
+    <Compile Include="Assets\users\nakamura\damageEffect.cs" />
     <Compile Include="Assets\users\nakamura\shell.cs" />
     <Compile Include="Assets\users\nakamura\shellPlFar.cs" />
     <Compile Include="Assets\users\nakamura\shellPlNear.cs" />
