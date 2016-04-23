@@ -103,6 +103,11 @@ public class enemy : MonoBehaviour {
 	void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.tag == "Player") {
+			Debug.Log ("Hit to Pl");
+
+			//todo add damage
+			GameObject.Find("PlayerStatus").GetComponent<status>().OnDamage();
+
 			//todo test death
 			Destroy(this.gameObject);
 		}
