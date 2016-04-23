@@ -53,3 +53,10 @@ Temp
 *.unityproj
 *.sln
 *.userprefs
+*.svd
+*.csproj
+*.pidb
+*.suo
+*.user
+*.unityproj
+*.booproj

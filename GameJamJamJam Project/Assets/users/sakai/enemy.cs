@@ -106,7 +106,6 @@ public class enemy : MonoBehaviour {
 			Debug.Log ("Hit to Pl");
 
 //			other.gameObject.GetComponent<
-
 			//todo test death
 			Destroy(this.gameObject);
 		}
