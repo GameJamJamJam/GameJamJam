@@ -82,6 +82,8 @@ public class PlayerController: MonoBehaviour
     public List<AudioClip> VoiceList = new List<AudioClip>();
     public AudioSource voiceAudio;
     public AudioSource levelUpAudio;
+    public AudioSource jumpAudio;
+    public AudioSource attackSE;
 
     /// <summary>
     /// 各ステータス
@@ -199,6 +201,7 @@ public class PlayerController: MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
             {
                 dir.y = _jumpFirstSpeed;
+                jumpAudio.Play();
                 _jumpCount++;
             }
         }
@@ -353,10 +356,13 @@ public class PlayerController: MonoBehaviour
     {
         //VoiceList[0].Play();
 
-        int id = Random.Range(0, 3);
-
-        voiceAudio.clip = VoiceList[id];
-        voiceAudio.Play();
+        if (!voiceAudio.isPlaying)
+        {
+            int id = Random.Range(0, 3);
+            voiceAudio.clip = VoiceList[id];
+            voiceAudio.Play();
+        }
+        attackSE.Play();
     }
 
     public void PlayDamageVoice()
