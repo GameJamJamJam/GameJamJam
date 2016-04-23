@@ -248,7 +248,7 @@ public class PlayerController: MonoBehaviour
     private IEnumerator ResumeCanAttackNear()
     {
         _isCanAttackNear = false;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
 
         _isCanAttackNear = true;
     }
@@ -271,13 +271,35 @@ public class PlayerController: MonoBehaviour
 
 		playerObj = GameObject.Find ("Player");
 		playerPos = playerObj.transform.position;
-		GameObject obj = Instantiate (Resources.Load ("ShellPlNear"), playerPos, Quaternion.identity) as GameObject;
-		obj.GetComponent<shellPlNear> ().initDir = Vector3.left;
-		if (IsRight) {
-			obj.GetComponent<shellPlNear> ().initDir = Vector3.right;
-		}
 
+<<<<<<< Updated upstream
         EventAttackNear();
+=======
+		int numShell = 3;
+		float maxDeg = 60.0f;
+		float deltaDeg = maxDeg / (numShell-1);
+		for (int i = 0; i < numShell; i++) {
+			GameObject obj = Instantiate (Resources.Load ("ShellPlNear"), playerPos, Quaternion.identity) as GameObject;
+
+			int idx = i - (numShell / 2);
+			float vecX = Mathf.Cos (idx * deltaDeg / 360.0f * 2.0f * 3.14159265f);
+			float vecY = Mathf.Sin (idx * deltaDeg / 360.0f * 2.0f * 3.14159265f);
+			Vector3 vec;
+
+			if (IsRight) {
+				vec = new Vector3 (vecX, vecY, 0.0f);
+			} else {
+				vec = new Vector3 (-vecX, vecY, 0.0f);
+			}
+			obj.GetComponent<shellPlNear> ().initDir = vec;
+/*
+			obj.GetComponent<shellPlNear> ().initDir = Vector3.left;
+			if (IsRight) {
+				obj.GetComponent<shellPlNear> ().initDir = Vector3.right;
+			}
+*/
+		}
+>>>>>>> Stashed changes
         StartCoroutine("ResumeCanAttackNear");
     }
 
@@ -290,6 +312,7 @@ public class PlayerController: MonoBehaviour
 
 		playerObj = GameObject.Find ("Player");
 		playerPos = playerObj.transform.position;
+
 		GameObject obj = Instantiate (Resources.Load ("ShellPlFar"), playerPos, Quaternion.identity) as GameObject;
 		obj.GetComponent<shellPlFar> ().initDir = Vector3.left;
 		if (IsRight) {
