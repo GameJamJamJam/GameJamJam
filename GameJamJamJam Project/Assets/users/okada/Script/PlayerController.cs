@@ -32,7 +32,7 @@ public class PlayerController: MonoBehaviour
         if (cc.isGrounded)
         {
 
-            dir = new Vector3(h, 0, v);
+            dir = new Vector3(h, 0, 0);
             dir = transform.TransformDirection(dir);
             dir *= speed;
 
@@ -46,9 +46,12 @@ public class PlayerController: MonoBehaviour
 
         cc.Move(dir * Time.deltaTime);
 
+        if (Input.GetButton("Fire1"))
+        {
+            Debug.Log(this.gameObject.ToString() +" Fire!");
+        }
 
-
-        Debug.Log("" + h + "," + v + "," + jumpspeed);
+        //Debug.Log("" + h + "," + v + "," + jumpspeed);
     }
 
 }
