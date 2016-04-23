@@ -5,23 +5,9 @@ using AssemblyCSharp;
 public class status : MonoBehaviour {
 
 	// 
-	public float vital
-	{
-		get;
-		set;
-	}
-
-	public float magicPower
-	{
-		get;
-		set;
-	}
-
-	public int bulletNum
-	{
-		get;
-		set;
-	}
+	public float vital;
+	public float magicPower;
+	public int bulletNum;
 
 	public exp[] expArray;
 
