@@ -14,9 +14,12 @@ public class PlayerLifeManager : MonoBehaviour {
         set { this._life = value; }
     }
 
+    public PlayerController PlController;
+
     // Use this for initialization
-    void Start () {
-	
+    void Start ()
+    {
+        PlController = gameObject.GetComponent<PlayerController>();
 	}
 	
 	// Update is called once per frame
@@ -32,5 +35,6 @@ public class PlayerLifeManager : MonoBehaviour {
     {
         _life -= value;
 
+        PlController.PlayDamageVoice();
     }
 }

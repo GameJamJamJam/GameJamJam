@@ -79,6 +79,10 @@ public class PlayerController: MonoBehaviour
 
     public List<GameObject> LevelUpEffects = new List<GameObject>();
 
+    public List<AudioClip> VoiceList = new List<AudioClip>();
+    public AudioSource voiceAudio;
+    public AudioSource levelUpAudio;
+
     /// <summary>
     /// 各ステータス
     /// </summary>
@@ -107,6 +111,9 @@ public class PlayerController: MonoBehaviour
         {
             Levels.Add( 0 );
         }
+
+        EventAttackNear += PlayAttackVoice;
+        EventAttackFar += PlayAttackVoice;
     }
     
     // Use this for initialization
@@ -115,6 +122,7 @@ public class PlayerController: MonoBehaviour
         h = 0;
         dir = Vector3.zero;
         cc = gameObject.GetComponent<CharacterController>();
+        //audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -225,6 +233,8 @@ public class PlayerController: MonoBehaviour
 
         var effect = Instantiate(LevelUpEffects[(int)expType], transform.position + new Vector3(0, 0, -3.0f), Quaternion.identity) as GameObject;
         effect.transform.parent = this.gameObject.transform;
+
+        levelUpAudio.Play();
     }
 
     /// <summary>
@@ -336,6 +346,25 @@ public class PlayerController: MonoBehaviour
 
         EventAttackFar();
         StartCoroutine("ResumeCanAttackFar");
+
+    }
+
+    void PlayAttackVoice()
+    {
+        //VoiceList[0].Play();
+
+        int id = Random.Range(0, 3);
+
+        voiceAudio.clip = VoiceList[id];
+        voiceAudio.Play();
+    }
+
+    public void PlayDamageVoice()
+    {
+        int id = Random.Range(3, 7);
+
+        voiceAudio.clip = VoiceList[id];
+        voiceAudio.Play();
 
     }
 }
