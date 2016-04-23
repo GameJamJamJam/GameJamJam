@@ -4,6 +4,7 @@ using System.Collections;
 public class spawner : MonoBehaviour {
 	public float SpawnTime = 3.0f;
 	public enemy.eEnemyType SpawnEnemyType;
+	public int numCreated = 0;
 
 
 	private float mSpawnTimer;
@@ -31,6 +32,8 @@ public class spawner : MonoBehaviour {
 			obj.transform.parent = GameObject.Find ("Enemies").gameObject.transform;
 			obj.GetComponent<enemy> ().ExpType = mExpType;
 			obj.GetComponent<enemy> ().EnemyType = SpawnEnemyType;
+			obj.GetComponent<enemy> ().Life = numCreated * 3;
+			numCreated++;
 
 			mSpawnChangeCount--;
 			if (mSpawnChangeCount <= 0) {

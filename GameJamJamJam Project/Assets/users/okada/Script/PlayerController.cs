@@ -248,7 +248,8 @@ public class PlayerController: MonoBehaviour
     private IEnumerator ResumeCanAttackNear()
     {
         _isCanAttackNear = false;
-        yield return new WaitForSeconds(0.3f);
+
+		yield return new WaitForSeconds(0.6f);
 
         _isCanAttackNear = true;
     }
@@ -257,7 +258,13 @@ public class PlayerController: MonoBehaviour
     {
         _isCanAttackFar = false;
 
-        yield return new WaitForSeconds(0.1f);
+		int shotBullet = Levels [(int)item.eExpType.ShotBullet];
+		float wait = 0.2f - shotBullet * 0.002f;
+		if (wait < 0.01f) {
+			wait = 0.01f;
+		}
+
+		yield return new WaitForSeconds(wait);
 
         _isCanAttackFar = true;
     }
@@ -272,8 +279,14 @@ public class PlayerController: MonoBehaviour
 		playerObj = GameObject.Find ("Player");
 		playerPos = playerObj.transform.position;
 
-		int numShell = 3;
-		float maxDeg = 60.0f;
+		int meleeHit = Levels [(int)item.eExpType.MeleeHit];
+		int meleePow = Levels [(int)item.eExpType.MeleePow]+1;
+
+		Debug.Log (meleeHit.ToString());
+		Debug.Log (meleePow.ToString());
+
+		int numShell = 3 + meleeHit * 2;
+		float maxDeg = 60.0f + meleeHit * 5;
 		float deltaDeg = maxDeg / (numShell-1);
 		for (int i = 0; i < numShell; i++) {
 			GameObject obj = Instantiate (Resources.Load ("ShellPlNear"), playerPos, Quaternion.identity) as GameObject;
@@ -289,6 +302,9 @@ public class PlayerController: MonoBehaviour
 				vec = new Vector3 (-vecX, vecY, 0.0f);
 			}
 			obj.GetComponent<shellPlNear> ().initDir = vec;
+			obj.GetComponent<shellPlNear> ().power = meleePow * meleePow * 5;
+
+			obj.GetComponent<shellPlNear> ().ttl = 5 + meleeHit / 5;
 		}
 
 		EventAttackNear();
@@ -305,11 +321,18 @@ public class PlayerController: MonoBehaviour
 		playerObj = GameObject.Find ("Player");
 		playerPos = playerObj.transform.position;
 
+		int shotBullet = Levels [(int)item.eExpType.ShotBullet];
+		int shotPow = Levels [(int)item.eExpType.ShotPow]+1;
+
+
 		GameObject obj = Instantiate (Resources.Load ("ShellPlFar"), playerPos, Quaternion.identity) as GameObject;
-		obj.GetComponent<shellPlFar> ().initDir = Vector3.left;
 		if (IsRight) {
 			obj.GetComponent<shellPlFar> ().initDir = Vector3.right;
+		} else {
+			obj.GetComponent<shellPlFar> ().initDir = Vector3.left;
 		}
+		obj.GetComponent<shellPlFar> ().power = shotPow * shotPow * shotPow;
+
 
         EventAttackFar();
         StartCoroutine("ResumeCanAttackFar");
