@@ -19,6 +19,7 @@ public class item : MonoBehaviour {
 	public GameObject[] DrawObjes = new GameObject[(int)item.eExpType.Max];
 
 	public bool IsHeal = false;
+	public float mLifeTimer = 3.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,10 @@ public class item : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		mLifeTimer -= Time.deltaTime;
+		if (mLifeTimer < 0) {
+			Destroy (this.gameObject);
+		}
 	}
 
 	void OnTriggerEnter(Collider other)
