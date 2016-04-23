@@ -28,10 +28,23 @@ public class PlayerController: MonoBehaviour
         set { this._gravity = value; }
     }
 
+    public int SumLevel
+    {
+        get
+        {
+            int sum = 0;
+            foreach( var exp in Level )
+            {
+                sum += exp;
+            }
+            return sum;
+        }
+    }
+
     /// <summary>
     /// 各ステータス
     /// </summary>
-    public List<int> Status = new List<int>();
+    public List<int> Level = new List<int>();
 
     private CharacterController cc;
     private Vector3 dir;
@@ -43,7 +56,7 @@ public class PlayerController: MonoBehaviour
         // 各ステータス
         for( int i=0; i < (int)item.eExpType.Max; i++ )
         {
-            Status.Add( 0 );
+            Level.Add( 0 );
         }
     }
     
@@ -90,7 +103,7 @@ public class PlayerController: MonoBehaviour
     /// <param name="expType"></param>
     public void LevelUpStatus( item.eExpType expType )
     {
-        Status[(int)expType]++;
+        Level[(int)expType]++;
         Debug.Log(this.gameObject.ToString() + " Level Up :" + expType.ToString());
     }
 
