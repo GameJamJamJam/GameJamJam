@@ -1449,8 +1449,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495372}
-  - 111: {fileID: 11119612}
   - 114: {fileID: 11485374}
+  - 95: {fileID: 9502536}
   m_Layer: 0
   m_Name: elf demo
   m_TagString: Untagged
@@ -3269,25 +3269,23 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159650}
   m_Enabled: 1
---- !u!111 &11119612
-Animation:
+--- !u!95 &9502536
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182438}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 83a1a7554c6f87d4ca1b10a0b635da63, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: ba9051795f1603d488a0ea998dbacc27, type: 3}
-  - {fileID: 7400000, guid: 83a1a7554c6f87d4ca1b10a0b635da63, type: 3}
-  - {fileID: 7400000, guid: 0672d0af8c3cc8245af858351d3b6c33, type: 3}
-  - {fileID: 7400000, guid: 428e87d475580ca458360e8c4956c12b, type: 3}
-  - {fileID: 7400000, guid: 3a01564ae5eb666408a3de30ecaa958c, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 077607474b05bc14398f28f72dac7451, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11417192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3338,6 +3336,14 @@ MonoBehaviour:
   _jumpHoldSpeed: 7
   _friction: 5
   _gravity: -20
+  LevelUpEffects:
+  - {fileID: 100002, guid: 75369bb81385f4904842bf20a51c14a2, type: 2}
+  - {fileID: 100002, guid: 0d196ff67d8a80548846abc35b0bc500, type: 2}
+  - {fileID: 100002, guid: 76922ef6b8c6d8e499c1c20d31e2d614, type: 2}
+  - {fileID: 100002, guid: c5002590278248b4ab043694a53034b8, type: 2}
+  - {fileID: 100002, guid: cb71adc5f891c2b44b9e52ef28115c33, type: 2}
+  - {fileID: 100002, guid: 5d7eb35dc57220047afd49e78a43e86b, type: 2}
+  - {fileID: 100002, guid: ef05fca565ce26945aae72595b1b5707, type: 2}
   Levels: 
 --- !u!114 &11485374
 MonoBehaviour:
