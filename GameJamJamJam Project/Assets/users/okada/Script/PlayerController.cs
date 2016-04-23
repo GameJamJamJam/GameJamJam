@@ -28,10 +28,8 @@ public class PlayerController: MonoBehaviour
     {
 
         h = Input.GetAxis("Horizontal");
-        v = Input.GetAxis("Vertical");
         if (cc.isGrounded)
         {
-
             dir = new Vector3(h, 0, 0);
             dir = transform.TransformDirection(dir);
             dir *= speed;
@@ -41,17 +39,33 @@ public class PlayerController: MonoBehaviour
                 dir.y = jumpspeed;
             }
         }
-
         dir.y -= 20f * Time.deltaTime;
-
         cc.Move(dir * Time.deltaTime);
 
         if (Input.GetButton("Fire1"))
         {
-            Debug.Log(this.gameObject.ToString() +" Fire!");
+            AttackNear();
         }
-
-        //Debug.Log("" + h + "," + v + "," + jumpspeed);
+        else if( Input.GetButton("Fire2") )
+        {
+            AttackFar();
+        }
     }
 
+    /// <summary>
+    /// 近距離攻撃
+    /// </summary>
+    void AttackNear()
+    {
+        Debug.Log(this.gameObject.ToString() + " Fire Near!");
+    }
+
+    /// <summary>
+    /// 遠距離攻撃
+    /// </summary>
+    void AttackFar()
+    {
+        Debug.Log(this.gameObject.ToString() + " Fire Far!");
+
+    }
 }
