@@ -105,8 +105,7 @@ public class enemy : MonoBehaviour {
 		if (other.gameObject.tag == "Player") {
 			Debug.Log ("Hit to Pl");
 
-			//todo add damage
-			GameObject.Find("PlayerStatus").GetComponent<status>().OnDamage();
+//			other.gameObject.GetComponent<
 			//todo test death
 			Destroy(this.gameObject);
 		}
@@ -115,6 +114,8 @@ public class enemy : MonoBehaviour {
 
 	void OnDestroy()
 	{
+
+
 		for (int i = 0; i < ItemNum; i++) {
 			GameObject obj = Instantiate (Resources.Load ("ItemExp"), transform.position +new Vector3(0.01f * Random.Range(-1.0f, 1.0f) ,0.01f * i,0.0f), Quaternion.identity) as GameObject;
 			obj.transform.parent = GameObject.Find ("Items").gameObject.transform;
