@@ -3,7 +3,7 @@ using System.Collections;
 
 public class enemy : MonoBehaviour {
 
-	public int Life = 1;
+	public int Life = 3;
 	public float Spd = 1.0f;
 	public int ItemNum = 10;
 	public item.eExpType ExpType = item.eExpType.Cam;
@@ -23,6 +23,14 @@ public class enemy : MonoBehaviour {
 	private int mLife;
 	private const float cMoveTime = 0.5f;
 	private float mMoveTimer;
+
+	//PLの攻撃によるダメージ
+	public void addDamage(int dmgVal){
+		mLife -= dmgVal;
+		if (mLife <= 0) {
+			Destroy (this.gameObject);
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -113,5 +121,6 @@ public class enemy : MonoBehaviour {
 			obj.GetComponent<item> ().ExpType = ExpType;
 		}
 	}
+
 
 }
