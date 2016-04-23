@@ -62,11 +62,16 @@ public class PlayerController: MonoBehaviour
     /// </summary>
     public List<int> Levels = new List<int>();
 
+    private int _jumpCount;
+    private int _jumpCountMax = 1;
+    
     private CharacterController cc;
     private Vector3 dir;
     private float h;
 
-    
+    /// <summary>
+    /// Awake
+    /// </summary>
     void Awake()
     {
         // 各ステータス
@@ -100,6 +105,9 @@ public class PlayerController: MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// LateUpdate
+    /// </summary>
     void LateUpdate()
     {
         // 外に出ないように無理やり
@@ -125,6 +133,7 @@ public class PlayerController: MonoBehaviour
         if (cc.isGrounded)
         {
             dir.y = 0.0f;
+            _jumpCount = 0;
         }
         else
         {
@@ -132,23 +141,42 @@ public class PlayerController: MonoBehaviour
         }
 
         // Jump
-        if (Input.GetKeyDown(KeyCode.Space))
+        if ( IsCanJump() )
         {
-            dir.y = _jumpSpeed;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                dir.y = _jumpSpeed;
+                _jumpCount++;
+            }
         }
-
         cc.Move(dir * Time.deltaTime);
 
+    }
+
+    bool IsCanJump()
+    {
+        if( _jumpCount < Levels[(int)item.eExpType.Jump] + 1)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /// <summary>
     /// レベルアップ
     /// </summary>
     /// <param name="expType"></param>
-    public void LevelUpStatus( item.eExpType expType )
+    public void LevelUpStatus(item.eExpType expType)
     {
         Levels[(int)expType]++;
         Debug.Log(this.gameObject.ToString() + " Level Up :" + expType.ToString());
+
+        switch (expType)
+        {
+            default:
+                break;
+        }
     }
 
     /// <summary>
