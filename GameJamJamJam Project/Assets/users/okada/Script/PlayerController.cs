@@ -21,11 +21,19 @@ public class PlayerController: MonoBehaviour
     }
 
     [SerializeField]
-    private float _jumpSpeed = 10;
-    public float JumpSpeed
+    private float _jumpFirstSpeed = 10;
+    public float JumpFirstSpeed
     {
-        get { return this._jumpSpeed; }
-        set { this._jumpSpeed = value; }
+        get { return this._jumpFirstSpeed; }
+        set { this._jumpFirstSpeed = value; }
+    }
+
+    [SerializeField]
+    private float _jumpHoldSpeed = 10;
+    public float JumpHoldSpeed
+    {
+        get { return this._jumpHoldSpeed; }
+        set { this._jumpHoldSpeed = value; }
     }
 
     [SerializeField]
@@ -67,7 +75,7 @@ public class PlayerController: MonoBehaviour
     
     private CharacterController cc;
     private Vector3 dir;
-    private float h;
+    private float h,v ;
 
     /// <summary>
     /// Awake
@@ -124,9 +132,7 @@ public class PlayerController: MonoBehaviour
         // 横入力
         h = Input.GetAxis("Horizontal");
         dir.x += h * _accel * Time.deltaTime;
-
         dir.x += -dir.x * _friction * Time.deltaTime;
-
         dir.x = Mathf.Clamp(dir.x, -SpeedMax, SpeedMax);
 
         // Gravity
@@ -138,6 +144,18 @@ public class PlayerController: MonoBehaviour
         else
         {
             dir.y += _gravity * Time.deltaTime;
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                dir.y += _jumpHoldSpeed * Time.deltaTime;
+            }
+        }
+
+        // 縦入力
+        v = Input.GetAxis("Vertical");
+        if( v < 0 )
+        {
+            dir.y += v * 10.0f * _accel * Time.deltaTime;
         }
 
         // Jump
@@ -145,7 +163,7 @@ public class PlayerController: MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                dir.y = _jumpSpeed;
+                dir.y = _jumpFirstSpeed;
                 _jumpCount++;
             }
         }

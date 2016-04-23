@@ -239,9 +239,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _accel: 50
   _speedMax: 6
-  _jumpSpeed: 10
+  _jumpFirstSpeed: 10
+  _jumpHoldSpeed: 7
   _friction: 5
-  _gravity: -9.8
+  _gravity: -20
   Levels: 
 --- !u!114 &11486036
 MonoBehaviour:
