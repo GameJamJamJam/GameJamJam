@@ -264,6 +264,9 @@ public class PlayerController: MonoBehaviour
 		playerPos = playerObj.transform.position;
 		GameObject obj = Instantiate (Resources.Load ("ShellPlNear"), playerPos, Quaternion.identity) as GameObject;
 		obj.GetComponent<shellPlNear> ().initDir = Vector3.left;
+		if (IsRight) {
+			obj.GetComponent<shellPlNear> ().initDir = Vector3.right;
+		}
 
         StartCoroutine("ResumeCanAttackNear");
     }
@@ -278,7 +281,10 @@ public class PlayerController: MonoBehaviour
 		playerObj = GameObject.Find ("Player");
 		playerPos = playerObj.transform.position;
 		GameObject obj = Instantiate (Resources.Load ("ShellPlFar"), playerPos, Quaternion.identity) as GameObject;
-		obj.GetComponent<shellPlFar> ().initDir = Vector3.right;
+		obj.GetComponent<shellPlFar> ().initDir = Vector3.left;
+		if (IsRight) {
+			obj.GetComponent<shellPlFar> ().initDir = Vector3.right;
+		}
 
         StartCoroutine("ResumeCanAttackFar");
 
