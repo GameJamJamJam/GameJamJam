@@ -60,3 +60,9 @@ Temp
 *.user
 *.unityproj
 *.booproj
+
+GameJamJamJam Project/obj/Debug/Assembly-CSharp.dll
+
+GameJamJamJam Project/obj/Debug/Assembly-CSharp.dll.mdb
+
+GameJamJamJam Project/Assembly-CSharp.csproj

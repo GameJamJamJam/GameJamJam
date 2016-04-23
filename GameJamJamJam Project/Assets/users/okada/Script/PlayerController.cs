@@ -77,6 +77,9 @@ public class PlayerController: MonoBehaviour
     private Vector3 dir;
     private float h,v ;
 
+	private GameObject playerObj;
+	private Vector3 playerPos;
+
     /// <summary>
     /// Awake
     /// </summary>
@@ -202,7 +205,12 @@ public class PlayerController: MonoBehaviour
     /// </summary>
     void AttackNear()
     {
-        Debug.Log(this.gameObject.ToString() + " Fire Near!");
+        //Debug.Log(this.gameObject.ToString() + " Fire Near!");
+
+		playerObj = GameObject.Find ("Player");
+		playerPos = playerObj.transform.position;
+		GameObject obj = Instantiate (Resources.Load ("Shell"), playerPos, Quaternion.identity) as GameObject;
+		obj.GetComponent<shell> ().initDir = Vector3.left;
     }
 
     /// <summary>
@@ -210,6 +218,11 @@ public class PlayerController: MonoBehaviour
     /// </summary>
     void AttackFar()
     {
-        Debug.Log(this.gameObject.ToString() + " Fire Far!");
-    }
+        //Debug.Log(this.gameObject.ToString() + " Fire Far!");
+
+		playerObj = GameObject.Find ("Player");
+		playerPos = playerObj.transform.position;
+		GameObject obj = Instantiate (Resources.Load ("Shell"), playerPos, Quaternion.identity) as GameObject;
+		obj.GetComponent<shell> ().initDir = Vector3.right;
+	}
 }
