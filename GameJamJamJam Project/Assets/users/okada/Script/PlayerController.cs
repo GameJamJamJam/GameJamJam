@@ -272,9 +272,6 @@ public class PlayerController: MonoBehaviour
 		playerObj = GameObject.Find ("Player");
 		playerPos = playerObj.transform.position;
 
-<<<<<<< Updated upstream
-        EventAttackNear();
-=======
 		int numShell = 3;
 		float maxDeg = 60.0f;
 		float deltaDeg = maxDeg / (numShell-1);
@@ -292,14 +289,9 @@ public class PlayerController: MonoBehaviour
 				vec = new Vector3 (-vecX, vecY, 0.0f);
 			}
 			obj.GetComponent<shellPlNear> ().initDir = vec;
-/*
-			obj.GetComponent<shellPlNear> ().initDir = Vector3.left;
-			if (IsRight) {
-				obj.GetComponent<shellPlNear> ().initDir = Vector3.right;
-			}
-*/
 		}
->>>>>>> Stashed changes
+
+		EventAttackNear();
         StartCoroutine("ResumeCanAttackNear");
     }
 
