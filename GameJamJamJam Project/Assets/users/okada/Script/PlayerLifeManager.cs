@@ -3,8 +3,19 @@ using System.Collections;
 
 public class PlayerLifeManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    /// <summary>
+    /// プレイヤーの体力
+    /// </summary>
+    [SerializeField]
+    private float _life = 3;
+    public float Life
+    {
+        get { return this._life; }
+        set { this._life = value; }
+    }
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	

@@ -16,7 +16,7 @@ public class PlayerHitManager : MonoBehaviour {
     //Box Collider -> Is Trigger OFF
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("cube1 hit OnCollisionEnter with " + collision.gameObject);
+        //Debug.Log("cube1 hit OnCollisionEnter with " + collision.gameObject);
 
         var hitEnemy = collision.gameObject.GetComponent<enemy>();
 
