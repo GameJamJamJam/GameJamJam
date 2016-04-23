@@ -8,7 +8,12 @@ public class status : MonoBehaviour {
 	public float vital
 	{
 		get;
-		private set;
+		set;
+	}
+	public float magicPower
+	{
+		get;
+		set;
 	}
 
 	public exp[] expArray;
@@ -18,6 +23,7 @@ public class status : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		vital = 3.0f;
+		magicPower = 100.0f;
 
 		this.expArray = new exp[(int)item.eExpType.Max];
 	}
