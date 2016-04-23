@@ -7,6 +7,7 @@ public class shell : MonoBehaviour {
 	public Vector3 initDir;
 	public float speed = 0.3f;
 	public int ttl = 60;
+	public int power = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -21,5 +22,19 @@ public class shell : MonoBehaviour {
 		}
 
 		transform.position += dir * speed;
+	}
+
+	void OnCollisionEnter(Collision other)
+	{
+		if (other.gameObject.tag == "Enemy") {
+			//Debug.Log ("Hit to Pl");
+
+			//other.gameObject.GetComponent<
+			//todo test death
+
+			other.gameObject.GetComponent<enemy> ().addDamage (power);
+
+			Destroy(this.gameObject);
+		}
 	}
 }
