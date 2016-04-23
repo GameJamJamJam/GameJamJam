@@ -107,6 +107,9 @@ public class enemy : MonoBehaviour {
 
 //			other.gameObject.GetComponent<
 			//todo test death
+
+			other.gameObject.GetComponent<PlayerLifeManager> ().ApplayDamage (1.0f);
+
 			Destroy(this.gameObject);
 		}
 	}
