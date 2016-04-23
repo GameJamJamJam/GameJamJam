@@ -5,11 +5,19 @@ using System.Collections.Generic;
 public class PlayerController: MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 6;
-    public float Speed
+    private float _accel = 50;
+    public float Accel
     {
-        get { return this._speed; }
-        set { this._speed = value; }
+        get { return this._accel; }
+        set { this._accel = value; }
+    }
+
+    [SerializeField]
+    private float _speedMax = 6;
+    public float SpeedMax
+    {
+        get { return this._speedMax; }
+        set { this._speedMax = value; }
     }
 
     [SerializeField]
@@ -18,6 +26,14 @@ public class PlayerController: MonoBehaviour
     {
         get { return this._jumpSpeed; }
         set { this._jumpSpeed = value; }
+    }
+
+    [SerializeField]
+    private float _friction = 5.0f;
+    public float Friction
+    {
+        get { return this._friction; }
+        set { this._friction = value; }
     }
 
     [SerializeField]
@@ -71,20 +87,30 @@ public class PlayerController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // 横入力
         h = Input.GetAxis("Horizontal");
+        dir.x += h * _accel * Time.deltaTime;
+
+        dir.x += -dir.x * _friction * Time.deltaTime;
+
+        dir.x = Mathf.Clamp(dir.x, -SpeedMax, SpeedMax);
+
+        // Gravity
         if (cc.isGrounded)
         {
-            dir = new Vector3(h, 0, 0);
-            dir = transform.TransformDirection(dir);
-            dir *= _speed;
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                dir.y = _jumpSpeed;
-            }
+            dir.y = 0.0f;
         }
-        dir.y += _gravity * Time.deltaTime;
+        else
+        {
+            dir.y += _gravity * Time.deltaTime;
+        }
+
+        // Jump
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            dir.y = _jumpSpeed;
+        }
+
         cc.Move(dir * Time.deltaTime);
 
         if (Input.GetButton("Fire1"))

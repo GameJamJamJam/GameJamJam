@@ -237,8 +237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41a48564106609409c3cceac8280ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 6
+  _accel: 50
+  _speedMax: 6
   _jumpSpeed: 10
+  _friction: 5
   _gravity: -9.8
   Levels: 
 --- !u!114 &11486036
