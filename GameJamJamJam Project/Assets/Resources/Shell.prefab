@@ -12,7 +12,7 @@ GameObject:
   - 65: {fileID: 6579680}
   - 23: {fileID: 2393616}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

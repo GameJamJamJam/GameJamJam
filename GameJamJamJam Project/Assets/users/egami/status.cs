@@ -10,7 +10,14 @@ public class status : MonoBehaviour {
 		get;
 		set;
 	}
+
 	public float magicPower
+	{
+		get;
+		set;
+	}
+
+	public int bulletNum
 	{
 		get;
 		set;
@@ -24,6 +31,7 @@ public class status : MonoBehaviour {
 	void Start () {
 		vital = 3.0f;
 		magicPower = 100.0f;
+		bulletNum = 100;
 
 		this.expArray = new exp[(int)item.eExpType.Max];
 	}
