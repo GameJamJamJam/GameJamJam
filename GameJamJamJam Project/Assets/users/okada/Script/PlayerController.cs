@@ -73,6 +73,10 @@ public class PlayerController: MonoBehaviour
         }
     }
 
+    public delegate void EventAttack();
+    public EventAttack EventAttackNear;
+    public EventAttack EventAttackFar;
+
     /// <summary>
     /// 各ステータス
     /// </summary>
@@ -268,6 +272,7 @@ public class PlayerController: MonoBehaviour
 			obj.GetComponent<shellPlNear> ().initDir = Vector3.right;
 		}
 
+        EventAttackNear();
         StartCoroutine("ResumeCanAttackNear");
     }
 
@@ -286,6 +291,7 @@ public class PlayerController: MonoBehaviour
 			obj.GetComponent<shellPlFar> ().initDir = Vector3.right;
 		}
 
+        EventAttackFar();
         StartCoroutine("ResumeCanAttackFar");
 
     }

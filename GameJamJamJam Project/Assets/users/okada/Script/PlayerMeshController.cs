@@ -13,7 +13,10 @@ public class PlayerMeshController : MonoBehaviour {
     {
         PlController = this.gameObject.transform.parent.GetComponent<PlayerController>();
         CharaController = this.gameObject.transform.parent.GetComponent<CharacterController>();
-        Anim = this.gameObject.GetComponent<Animation>();
+        //Anim = this.gameObject.GetComponent<Animation>();
+
+        PlController.EventAttackNear += PlayAttackNear;
+        PlController.EventAttackFar += PlayAttackFar;
     }
 	
 	// Update is called once per frame
@@ -25,5 +28,28 @@ public class PlayerMeshController : MonoBehaviour {
         look.y = 0.0f;
         look.z = -5.0f;
         this.gameObject.transform.rotation = Quaternion.LookRotation( look );
+    }
+
+    void PlayAttackNear()
+    {
+        //Anim.Play("attack");
+        
+        StopCoroutine("ResetAnimation");
+        StartCoroutine("ResetAnimation");
+    }
+
+    void PlayAttackFar()
+    {
+       // Anim.Play("skill");
+        StopCoroutine("ResetAnimation");
+        StartCoroutine("ResetAnimation");
+    }
+
+    private IEnumerator ResetAnimation()
+    {
+        
+        yield return new WaitForSeconds(1);
+
+        //Anim.Play("run");
     }
 }
