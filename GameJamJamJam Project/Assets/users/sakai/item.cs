@@ -43,7 +43,7 @@ public class item : MonoBehaviour {
 	void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.tag == "Player") {
-			Debug.Log ("Item Hit to Pl");
+			//Debug.Log ("Item Hit to Pl");
 
 			//TODO add exp
 
