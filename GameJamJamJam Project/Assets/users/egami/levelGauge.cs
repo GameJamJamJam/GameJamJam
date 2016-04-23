@@ -21,10 +21,10 @@ public class levelGauge : MonoBehaviour {
 			exp tmpExp = refPlayerStatus.GetComponent<status> ().expArray [(int)expType];
 			GetComponent<Text> ().text = "Lv:";
 			GetComponent<Text> ().text += tmpExp.level.ToString();
-			GetComponent<Text> ().text += "[";
+			GetComponent<Text> ().text += " [";
 			GetComponent<Text> ().text += tmpExp.sub.ToString();
 			GetComponent<Text> ().text += ":";
-			GetComponent<Text> ().text += tmpExp.sub.ToString();
+			GetComponent<Text> ().text += tmpExp.total.ToString();
 			GetComponent<Text> ().text += "]";
 		}
 		

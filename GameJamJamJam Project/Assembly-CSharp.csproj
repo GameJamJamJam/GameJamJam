@@ -45,6 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Elf\Script\Elf_Manager.cs" />
+     <Compile Include="Assets\Elf\Script\Manager.cs" />
      <Compile Include="Assets\users\egami\bulletNum.cs" />
      <Compile Include="Assets\users\egami\exp.cs" />
      <Compile Include="Assets\users\egami\hpGauge.cs" />
@@ -52,9 +54,12 @@
      <Compile Include="Assets\users\egami\mpGauge.cs" />
      <Compile Include="Assets\users\egami\status.cs" />
      <Compile Include="Assets\users\nakamura\shell.cs" />
+     <Compile Include="Assets\users\nakamura\shellPlFar.cs" />
+     <Compile Include="Assets\users\nakamura\shellPlNear.cs" />
      <Compile Include="Assets\users\okada\Script\PlayerController.cs" />
      <Compile Include="Assets\users\okada\Script\PlayerHitManager.cs" />
      <Compile Include="Assets\users\okada\Script\PlayerLifeManager.cs" />
+     <Compile Include="Assets\users\okada\Script\PlayerMeshController.cs" />
      <Compile Include="Assets\users\sakai\camera.cs" />
      <Compile Include="Assets\users\sakai\enemy.cs" />
      <Compile Include="Assets\users\sakai\item.cs" />
