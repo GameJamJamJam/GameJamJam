@@ -25,13 +25,13 @@ public class levelGauge : MonoBehaviour {
 			Text tmpText = GetComponent<Text> ();
 			if (tmpText) {
 				tmpText.text = caption;
-				tmpText.text += ":";
+				tmpText.text += " ";
 				tmpText.text += tmpExp.level.ToString ();
-				tmpText.text += "  [";
+				tmpText.text += "  [ ";
 				tmpText.text += tmpExp.sub.ToString ();
 				tmpText.text += " / ";
 				tmpText.text += tmpExp.next.ToString ();
-				tmpText.text += "]";
+				tmpText.text += " ]";
 			}
 		}
 		if (0.0f < displayTime) {
