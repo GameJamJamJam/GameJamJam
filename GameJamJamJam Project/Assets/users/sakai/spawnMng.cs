@@ -21,7 +21,7 @@ public class spawnMng : MonoBehaviour {
 	{
 		int currentLv = GameObject.Find ("Player").GetComponent<PlayerController> ().SumLevel;
 		const int maxLv = 10;
-		currentLv = Mathf.Clamp (currentLv, 0, mSpawnNum.Length);
+		currentLv = Mathf.Clamp (currentLv, 0, mSpawnNum.Length-1);
 
 		return (mSpawnNum[currentLv] > mEnemyNum);
 	}
