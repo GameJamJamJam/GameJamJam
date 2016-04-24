@@ -211,6 +211,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &114822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 468556}
+  - 96: {fileID: 9617234}
+  m_Layer: 9
+  m_Name: Trail_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &115940
 GameObject:
   m_ObjectHideFlags: 1
@@ -831,6 +847,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &148506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 403798}
+  - 96: {fileID: 9660280}
+  m_Layer: 9
+  m_Name: Trail_B
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &149074
 GameObject:
   m_ObjectHideFlags: 1
@@ -924,6 +956,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &151590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400864}
+  - 96: {fileID: 9689586}
+  m_Layer: 9
+  m_Name: Trail_Y
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &152110
 GameObject:
   m_ObjectHideFlags: 1
@@ -979,7 +1027,7 @@ GameObject:
   - 4: {fileID: 408972}
   - 96: {fileID: 9696316}
   m_Layer: 9
-  m_Name: Trail
+  m_Name: Trail_W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1770,6 +1818,18 @@ Transform:
   - {fileID: 430244}
   m_Father: {fileID: 443516}
   m_RootOrder: 0
+--- !u!4 &400864
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.47200012, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 440524}
+  m_RootOrder: 6
 --- !u!4 &400872
 Transform:
   m_ObjectHideFlags: 1
@@ -1796,6 +1856,18 @@ Transform:
   - {fileID: 404880}
   m_Father: {fileID: 443420}
   m_RootOrder: 0
+--- !u!4 &403798
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.47200012, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 440524}
+  m_RootOrder: 5
 --- !u!4 &404660
 Transform:
   m_ObjectHideFlags: 1
@@ -1891,11 +1963,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.472, z: 0}
+  m_LocalPosition: {x: 0, y: -0.47200012, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 440524}
-  m_RootOrder: 3
+  m_RootOrder: 7
 --- !u!4 &410092
 Transform:
   m_ObjectHideFlags: 1
@@ -2333,8 +2405,11 @@ Transform:
   - {fileID: 446500}
   - {fileID: 408780}
   - {fileID: 495372}
-  - {fileID: 408972}
+  - {fileID: 468556}
   - {fileID: 438230}
+  - {fileID: 403798}
+  - {fileID: 400864}
+  - {fileID: 408972}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &443016
@@ -2790,6 +2865,18 @@ Transform:
   - {fileID: 497242}
   m_Father: {fileID: 438018}
   m_RootOrder: 0
+--- !u!4 &468556
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.472, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 440524}
+  m_RootOrder: 3
 --- !u!4 &469080
 Transform:
   m_ObjectHideFlags: 1
@@ -3873,12 +3960,59 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!96 &9696316
+--- !u!96 &9617234
 TrailRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153844}
+  m_GameObject: {fileID: 114822}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9b0f65f23bbec084397904117945af22, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.5
+  m_StartWidth: 0.8
+  m_EndWidth: 0.5
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 3355446525
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 3019899099
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 1677721848
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 838861040
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 255
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+--- !u!96 &9660280
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148506}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -3918,6 +4052,100 @@ TrailRenderer:
     m_Color[4]:
       serializedVersion: 2
       rgba: 16774144
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+--- !u!96 &9689586
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151590}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9b0f65f23bbec084397904117945af22, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.5
+  m_StartWidth: 0.8
+  m_EndWidth: 0.5
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 3355506943
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 3019964390
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 1677787110
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 838926310
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 65531
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+--- !u!96 &9696316
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153844}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9b0f65f23bbec084397904117945af22, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.5
+  m_StartWidth: 0.8
+  m_EndWidth: 0.5
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 3372220415
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 3036676095
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 1694498815
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 855638015
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
 --- !u!114 &11417192
@@ -4092,6 +4320,11 @@ MonoBehaviour:
   - {fileID: 100002, guid: 05b02bbc7f40355479b68efbef666856, type: 2}
   - {fileID: 100002, guid: cd5e231165f6b154d906a4d5b2ae65b2, type: 2}
   PlayerStatus: {fileID: 0}
+  Trails:
+  - {fileID: 114822}
+  - {fileID: 148506}
+  - {fileID: 151590}
+  - {fileID: 153844}
 --- !u!114 &11485374
 MonoBehaviour:
   m_ObjectHideFlags: 1

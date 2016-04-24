@@ -8,6 +8,7 @@ public class PlayerChargeEffectManager : MonoBehaviour {
 
     public GameObject PlayerStatus;
 
+    public List<GameObject> Trails;
 
     status status;
     item.eExpType lastType = item.eExpType.None;
@@ -33,23 +34,27 @@ public class PlayerChargeEffectManager : MonoBehaviour {
         {
             lastType = status.getLastKillExp();
             Destroy(effect);
+            foreach( var trail in Trails )
+            {
+                trail.SetActive(false);
+            }
 
             switch(lastType)
             {
                 case item.eExpType.Jump:
 
                     effect = Instantiate(Effects[1], transform.position, Quaternion.identity) as GameObject;
-
+                    Trails[1].SetActive(true);
                     break;
                 case item.eExpType.MeleePow:
 
                     effect = Instantiate(Effects[0], transform.position, Quaternion.identity) as GameObject;
-
+                    Trails[0].SetActive(true);
                     break;
                 case item.eExpType.ShotPow:
 
                     effect = Instantiate(Effects[2], transform.position, Quaternion.identity) as GameObject;
-
+                    Trails[2].SetActive(true);
                     break;
             }
 
