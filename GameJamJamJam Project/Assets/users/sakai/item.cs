@@ -5,12 +5,13 @@ public class item : MonoBehaviour {
 
 	public enum eExpType
 	{
-		Cam = 0,
-		Spd,
-		Jump,
+		Jump = 0,
 		MeleePow,
-		MeleeHit,
 		ShotPow,
+
+		Cam,
+		Spd,
+		MeleeHit,
 		ShotBullet,
 		Max,
 	}
@@ -19,6 +20,7 @@ public class item : MonoBehaviour {
 	public GameObject[] DrawObjes = new GameObject[(int)item.eExpType.Max];
 
 	public bool IsHeal = false;
+	private GameObject mPlayerObj;
 
 	// Use this for initialization
 	void Start () {
@@ -27,16 +29,30 @@ public class item : MonoBehaviour {
 		}
 
 		DrawObjes [(int)ExpType].SetActive (true);
+
+		mPlayerObj = GameObject.Find ("Player");
 	}
-	
+
+
+
 	// Update is called once per frame
 	void Update () {
-	
+		float spd = 10.0f * Time.deltaTime;
+
+		Vector3 vel = mPlayerObj.transform.position - transform.position;
+		vel *= spd;
+
+		transform.position += vel;
+
+
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Bullet") {
+		if (other.tag == "Player") {
+
+			GameObject.Find ("PlayerStatus").GetComponent<status> ().AddExp (ExpType);
+			Destroy (this.gameObject);
 		}
 	}
 

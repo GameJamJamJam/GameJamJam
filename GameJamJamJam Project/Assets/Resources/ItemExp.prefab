@@ -35,7 +35,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &125212
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,8 +506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExpType: 0
   DrawObjes:
+  - {fileID: 141944}
   - {fileID: 125212}
-  - {fileID: 112326}
   - {fileID: 131640}
   - {fileID: 137704}
   - {fileID: 141944}

@@ -20,7 +20,7 @@ public class camera : MonoBehaviour {
 
 	void updateCamLevel()
 	{
-		int camLevel = mPlCtrl.Levels[(int)item.eExpType.Cam];
+		int camLevel = mPlCtrl.Levels[(int)item.eExpType.Jump];
 		Vector3 camPos = mPlCtrl.gameObject.transform.position;
 		camPos.z = CamDist [camLevel];
 

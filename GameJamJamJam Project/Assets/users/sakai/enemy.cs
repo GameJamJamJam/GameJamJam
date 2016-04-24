@@ -5,7 +5,7 @@ public class enemy : MonoBehaviour {
 
 	public int Life = 3;
 	public float Spd = 1.0f;
-	public int ItemNum = 10;
+	public int ItemNum = 1;
 	public item.eExpType ExpType = item.eExpType.Cam;
 	public GameObject[] DrawObjes = new GameObject[(int)item.eExpType.Max];
 

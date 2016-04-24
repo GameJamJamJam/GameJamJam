@@ -51,6 +51,6 @@ public class spawner : MonoBehaviour {
 
 	void randExpType()
 	{
-		mExpType = (item.eExpType)Random.Range ((int)item.eExpType.Cam,(int)item.eExpType.Max);
+		mExpType = (item.eExpType)Random.Range ((int)item.eExpType.Jump,(int)item.eExpType.Cam);
 	}
 }
