@@ -184,7 +184,7 @@ public class PlayerController: MonoBehaviour
         {
             dir.y += _gravity * Time.deltaTime;
 
-            if (Input.GetKey(KeyCode.Space))
+			if ( Input.GetButton("Jump"))
             {
                 dir.y += _jumpHoldSpeed * Time.deltaTime;
             }
@@ -200,7 +200,8 @@ public class PlayerController: MonoBehaviour
         // Jump
         if ( IsCanJump() )
         {
-			if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+			if(Input.GetButtonDown("Jump"))
+			//if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
             {
                 dir.y = _jumpFirstSpeed;
                 jumpAudio.Play();
@@ -297,15 +298,24 @@ public class PlayerController: MonoBehaviour
 		int meleeHit = Levels [(int)item.eExpType.MeleePow];
 		int meleePow = Levels [(int)item.eExpType.MeleePow]+1;
 
-		int numShell = 3 + meleeHit * 2;
-		float maxDeg = 60.0f + meleeHit * 5;
+		int numShell = 2 + meleeHit / 2;
+		float maxDeg = 30.0f + meleeHit * 5;
 		float deltaDeg = maxDeg / (numShell-1);
+
 		for (int i = 0; i < numShell; i++) {
 			GameObject obj = Instantiate (Resources.Load ("ShellPlNear"), playerPos, Quaternion.identity) as GameObject;
 
+
 			int idx = i - (numShell / 2);
-			float vecX = Mathf.Cos (idx * deltaDeg / 360.0f * 2.0f * 3.14159265f);
-			float vecY = Mathf.Sin (idx * deltaDeg / 360.0f * 2.0f * 3.14159265f);
+			float offsetDeg = 0.0f;
+
+			// 偶数ならオフセット
+			if (numShell % 2 == 0) {
+				offsetDeg = deltaDeg / 2.0f;
+			}
+
+			float vecX = Mathf.Cos ((idx * deltaDeg + offsetDeg) / 360.0f * 2.0f * 3.14159265f);
+			float vecY = Mathf.Sin ((idx * deltaDeg + offsetDeg) / 360.0f * 2.0f * 3.14159265f);
 			Vector3 vec;
 
 			if (IsRight) {
@@ -316,7 +326,7 @@ public class PlayerController: MonoBehaviour
 			obj.GetComponent<shellPlNear> ().initDir = vec;
 			obj.GetComponent<shellPlNear> ().power = meleePow * meleePow * 5;
 
-			obj.GetComponent<shellPlNear> ().ttl = 5 + meleeHit / 5;
+			obj.GetComponent<shellPlNear> ().ttl = 0.4f + meleeHit * 0.01f;
 		}
 
 		EventAttackNear();
