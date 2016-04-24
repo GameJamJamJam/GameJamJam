@@ -31,10 +31,8 @@ public class hpGauge : MonoBehaviour {
 			this.transform.position = pos;
 
 			refText.text = "";
-			Debug.Log (pos);
 			if (refPlayer != null) {
 				float lifeVal = refPlayer.GetComponent<PlayerLifeManager> ().Life;
-				Debug.Log (lifeVal);
 				int lineNum = (int)lifeVal;
 			
 				if (0.0f < lifeVal && lifeVal < 1.0f) {
