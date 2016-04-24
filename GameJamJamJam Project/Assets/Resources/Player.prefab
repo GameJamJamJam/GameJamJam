@@ -4330,10 +4330,10 @@ MonoBehaviour:
   tweakMode: 0
   screenBlendMode: 1
   hdr: 0
-  sepBlurSpread: 2.5
+  sepBlurSpread: 3
   quality: 1
-  bloomIntensity: 0.2
-  bloomThreshold: 0.5
+  bloomIntensity: 2
+  bloomThreshold: 0.7
   bloomThresholdColor: {r: 1, g: 1, b: 1, a: 1}
   bloomBlurIterations: 2
   hollywoodFlareBlurIterations: 2
