@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 198: {fileID: 19800002}
   m_Layer: 0
-  m_Name: Charge_02
+  m_Name: Charge_02_y
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
