@@ -85,6 +85,8 @@ public class PlayerController: MonoBehaviour
     public AudioSource jumpAudio;
     public AudioSource attackSE;
 
+    public GameObject DamageEffect;
+
     /// <summary>
     /// 各ステータス
     /// </summary>
@@ -372,5 +374,7 @@ public class PlayerController: MonoBehaviour
         voiceAudio.clip = VoiceList[id];
         voiceAudio.Play();
 
+        var effect = Instantiate(DamageEffect, transform.position, Quaternion.identity) as GameObject;
+        effect.transform.parent = this.gameObject.transform;
     }
 }
