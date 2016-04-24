@@ -9,9 +9,31 @@ public class status : MonoBehaviour {
 	public float magicPower;
 	public int bulletNum;
 
+
 	public exp[] expArray;
 
 
+	private item.eExpType mLastKillExp;
+	private int mKillStreak;
+
+	public item.eExpType getLastKillExp()
+	{
+		return mLastKillExp;
+	}
+	public int getKillStreak()
+	{
+		return mKillStreak;
+	}
+
+	public void setLastKill(item.eExpType expType)
+	{
+		if (mLastKillExp == expType) {
+			mKillStreak++;
+		} else {
+			mKillStreak = 0;
+		}
+		mLastKillExp = expType;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +45,8 @@ public class status : MonoBehaviour {
 		for (int i = 0; i < expArray.Length; i++) {
 			expArray [i] = new exp ();
 		}
+
+		mLastKillExp = item.eExpType.None;
 	}
 	
 	// Update is called once per frame

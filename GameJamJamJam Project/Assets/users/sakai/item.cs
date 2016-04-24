@@ -14,6 +14,7 @@ public class item : MonoBehaviour {
 		MeleeHit,
 		ShotBullet,
 		Max,
+		None,
 	}
 
 	public eExpType ExpType = eExpType.Cam;
@@ -22,6 +23,7 @@ public class item : MonoBehaviour {
 	public bool IsHeal = false;
 	private GameObject mPlayerObj;
 
+	float mSpeed = 1.0f;
 	// Use this for initialization
 	void Start () {
 		foreach (GameObject obj in DrawObjes) {
@@ -31,15 +33,20 @@ public class item : MonoBehaviour {
 		DrawObjes [(int)ExpType].SetActive (true);
 
 		mPlayerObj = GameObject.Find ("Player");
+
+		mSpeed = 6.0f * Random.Range (0.5f, 1.0f);
 	}
 
 
 
 	// Update is called once per frame
 	void Update () {
-		float spd = 10.0f * Time.deltaTime;
+		float spd =mSpeed  * Time.deltaTime;
 
 		Vector3 vel = mPlayerObj.transform.position - transform.position;
+		if (vel.magnitude > 0) {
+			vel = vel.normalized;
+		}
 		vel *= spd;
 
 		transform.position += vel;
@@ -58,11 +65,12 @@ public class item : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		if (other.gameObject.tag == "Player") {
+	/*	if (other.gameObject.tag == "Player") {
 
 			GameObject.Find ("PlayerStatus").GetComponent<status> ().AddExp (ExpType);
 			Destroy (this.gameObject);
 		}
+		*/
 	}
 
 
