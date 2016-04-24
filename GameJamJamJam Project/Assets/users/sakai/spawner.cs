@@ -75,7 +75,22 @@ public class spawner : MonoBehaviour {
 
 	void randExpType()
 	{
-		mExpType = (item.eExpType)Random.Range ((int)item.eExpType.Jump,(int)item.eExpType.Cam);
+		int rand = Random.Range (0,100);
+
+		if (rand < 40) {
+			mExpType = item.eExpType.MeleePow;
+		} else if (rand < 80) {
+			mExpType = item.eExpType.ShotPow;
+
+		} else {
+			mExpType = item.eExpType.Jump;
+
+		}
+
+		//mExpType = (item.eExpType)Random.Range ((int)item.eExpType.Jump,(int)item.eExpType.Cam);
+
+	//	if(
+		//mExpType = (item.eExpType)Random.Range ((int)item.eExpType.Jump,(int)item.eExpType.Cam0);
 	}
 
 	void changeScale(GameObject obj, float sizeRate)
