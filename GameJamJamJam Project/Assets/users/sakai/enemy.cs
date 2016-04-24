@@ -5,7 +5,7 @@ public class enemy : MonoBehaviour {
 
 	public int Life = 3;
 	public float Spd = 1.0f;
-	public int ItemNum = 1;
+	private int mItemNum = 1;
 	public item.eExpType ExpType = item.eExpType.Cam;
 	public GameObject[] DrawObjes = new GameObject[(int)item.eExpType.Max];
 
@@ -32,10 +32,23 @@ public class enemy : MonoBehaviour {
 		GameObject obj = Instantiate (Resources.Load ("damageEffect"), transform.position +new Vector3(0.0f,1.0f,0.0f), Quaternion.identity) as GameObject;
 		obj.GetComponent<damageEffect> ().damage = dmgVal;
 
-		GameObject plStatus = GameObject.Find ("SceneMng");
-		plStatus.GetComponent<sceneMng> ().addScore (dmgVal);
+		GameObject sceneMng = GameObject.Find ("SceneMng");
+		sceneMng.GetComponent<sceneMng> ().addScore (dmgVal);
 
 		if (mLife <= 0) {
+			mItemNum = 1;
+			status plStatus = GameObject.Find ("PlayerStatus").GetComponent<status> ();
+			plStatus.setLastKill (ExpType);
+			if (plStatus.getLastKillExp () == ExpType) {
+				mItemNum += plStatus.getKillStreak ();
+			}
+			Debug.Log ("ItemNum="+mItemNum);
+			for (int i = 0; i < mItemNum; i++) {
+				GameObject item = Instantiate (Resources.Load ("ItemExp"), transform.position +new Vector3(0.1f * Random.Range(-1.0f, 1.0f) ,0.01f * i,0.0f), Quaternion.identity) as GameObject;
+				item.transform.parent = GameObject.Find ("Items").gameObject.transform;
+				item.GetComponent<item> ().ExpType = ExpType;
+			}
+
 			Destroy (this.gameObject);
 		}
 	}
@@ -145,11 +158,7 @@ public class enemy : MonoBehaviour {
 	{
 		mSpawnMng.subEnemyNm ();
 
-		for (int i = 0; i < ItemNum; i++) {
-			GameObject obj = Instantiate (Resources.Load ("ItemExp"), transform.position +new Vector3(0.01f * Random.Range(-1.0f, 1.0f) ,0.01f * i,0.0f), Quaternion.identity) as GameObject;
-			obj.transform.parent = GameObject.Find ("Items").gameObject.transform;
-			obj.GetComponent<item> ().ExpType = ExpType;
-		}
+	
 	}
 
 
