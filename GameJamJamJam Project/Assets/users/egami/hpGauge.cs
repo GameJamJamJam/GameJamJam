@@ -15,7 +15,7 @@ public class hpGauge : MonoBehaviour {
 	void Start () {
 		refHpString = GameObject.Find ("HpString");
 		refText = GetComponent ("Text") as Text;
-		offset.x = 35;
+		offset.x = 62;
 		offset.y = 1;
 		GameObject tmp = GameObject.Find ("PlayerStatus");
 		if (tmp) {
