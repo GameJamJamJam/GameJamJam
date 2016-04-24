@@ -17,6 +17,8 @@ public class PlayerMeshController : MonoBehaviour {
 
         PlController.EventAttackNear += PlayAttackNear;
         PlController.EventAttackFar += PlayAttackFar;
+
+        this.gameObject.transform.rotation = Quaternion.LookRotation(new Vector3(-2.0f, 0.0f, -5.0f));
     }
 	
 	// Update is called once per frame
@@ -24,9 +26,24 @@ public class PlayerMeshController : MonoBehaviour {
     {
         var v = CharaController.velocity;
 
+        if( v.x == 0 )
+        {
+            return;
+        }
+
         var look = v;
         look.y = 0.0f;
         look.z = -5.0f;
+
+        if( look.x > 0 )
+        {
+            look.x = Mathf.Clamp(look.x, 2.0f, 10.0f);
+        }
+        else
+        {
+            look.x = Mathf.Clamp(look.x, -10.0f, -2.0f);
+        }
+
         this.gameObject.transform.rotation = Quaternion.LookRotation( look );
     }
 
