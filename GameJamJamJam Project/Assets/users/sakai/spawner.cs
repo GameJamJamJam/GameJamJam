@@ -38,6 +38,7 @@ public class spawner : MonoBehaviour {
 				obj.GetComponent<enemy> ().ExpType = mExpType;
 				obj.GetComponent<enemy> ().EnemyType = SpawnEnemyType;
 				obj.GetComponent<enemy> ().Life = numCreated * 3;
+				obj.GetComponent<enemy> ().Spd += numCreated * 0.2f; 
 				numCreated++;
 
 				mSpawnChangeCount--;

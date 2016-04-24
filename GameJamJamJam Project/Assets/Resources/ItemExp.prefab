@@ -47,6 +47,7 @@ GameObject:
   - 33: {fileID: 3320256}
   - 135: {fileID: 13522740}
   - 23: {fileID: 2314328}
+  - 96: {fileID: 9686112}
   m_Layer: 0
   m_Name: red
   m_TagString: Untagged
@@ -65,6 +66,7 @@ GameObject:
   - 33: {fileID: 3360288}
   - 135: {fileID: 13533650}
   - 23: {fileID: 2399540}
+  - 96: {fileID: 9640354}
   m_Layer: 0
   m_Name: yellow
   m_TagString: Untagged
@@ -101,6 +103,7 @@ GameObject:
   - 33: {fileID: 3304324}
   - 135: {fileID: 13595414}
   - 23: {fileID: 2382900}
+  - 96: {fileID: 9655696}
   m_Layer: 0
   m_Name: blue
   m_TagString: Untagged
@@ -163,15 +166,15 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400184}
   - {fileID: 434028}
   - {fileID: 481216}
   - {fileID: 478528}
-  - {fileID: 490828}
   - {fileID: 443140}
+  - {fileID: 490828}
   - {fileID: 480178}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -198,7 +201,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 423224}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!4 &478528
 Transform:
   m_ObjectHideFlags: 1
@@ -246,7 +249,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 423224}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!23 &2314328
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -279,7 +282,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -305,7 +308,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -357,7 +360,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178830}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -493,6 +496,147 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 0
+--- !u!96 &9640354
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131640}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9b0f65f23bbec084397904117945af22, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 2
+  m_StartWidth: 0.5
+  m_EndWidth: 0
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4278255611
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 3254845435
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 1946217983
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 654369791
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 63743
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+--- !u!96 &9655696
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141944}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9b0f65f23bbec084397904117945af22, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 2
+  m_StartWidth: 0.5
+  m_EndWidth: 0
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294901800
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 3825139774
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 2550071368
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 1342111784
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16711763
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+--- !u!96 &9686112
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125212}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9b0f65f23bbec084397904117945af22, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 2
+  m_StartWidth: 0.5
+  m_EndWidth: 0
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4278190335
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 3892314367
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 2264924415
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 922747135
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 255
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!114 &11446656
 MonoBehaviour:
   m_ObjectHideFlags: 1

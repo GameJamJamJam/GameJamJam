@@ -42,6 +42,9 @@ public class enemy : MonoBehaviour {
 			if (plStatus.getLastKillExp () == ExpType) {
 				mItemNum += plStatus.getKillStreak ();
 			}
+
+			mItemNum = Mathf.Clamp (mItemNum,1, 10);
+
 			Debug.Log ("ItemNum="+mItemNum);
 			for (int i = 0; i < mItemNum; i++) {
 				GameObject item = Instantiate (Resources.Load ("ItemExp"), transform.position +new Vector3(0.1f * Random.Range(-1.0f, 1.0f) ,0.01f * i,0.0f), Quaternion.identity) as GameObject;
@@ -83,24 +86,29 @@ public class enemy : MonoBehaviour {
 		DrawObjes [(int)ExpType].SetActive (true);
 
 	}
+
+	void updateSwitchType()
+	{
+		switch (EnemyType) {
+		case eEnemyType.Normal:
+			updateMoveNormal ();
+			break;
+		case eEnemyType.NormalRange:
+			break;
+		case eEnemyType.Fly:
+			updateMoveFly ();
+			break;
+		case eEnemyType.FlyRange:
+			break;
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
 		mMoveTimer -= Time.deltaTime;
 		if (mMoveTimer < 0.0f) {
 			mMoveTimer += cMoveTime;
-			switch (EnemyType) {
-			case eEnemyType.Normal:
-				updateMoveNormal ();
-				break;
-			case eEnemyType.NormalRange:
-				break;
-			case eEnemyType.Fly:
-				updateMoveFly ();
-				break;
-			case eEnemyType.FlyRange:
-				break;
-			}
+			updateSwitchType ();
 		}
 
 #if UNITY_EDITOR
@@ -150,6 +158,10 @@ public class enemy : MonoBehaviour {
 			other.gameObject.GetComponent<PlayerLifeManager> ().ApplayDamage (1.0f);
 
 			Destroy(this.gameObject);
+		}
+
+		if (other.gameObject.tag == "Untagged") {
+			updateSwitchType ();
 		}
 	}
 
