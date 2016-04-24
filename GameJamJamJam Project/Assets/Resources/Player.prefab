@@ -1092,6 +1092,7 @@ GameObject:
   - 114: {fileID: 11421962}
   - 114: {fileID: 11454098}
   - 114: {fileID: 11418350}
+  - 114: {fileID: 11493874}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4381,6 +4382,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _life: 10
   PlController: {fileID: 0}
+--- !u!114 &11493874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e318a6043c1cb4a8ce1c8805bab930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolution: 1
+  screenBlendMode: 0
+  sunTransform: {fileID: 0}
+  radialBlurIterations: 2
+  sunColor: {r: 1, g: 1, b: 1, a: 1}
+  sunThreshold: {r: 0.87, g: 0.74, b: 0.65, a: 1}
+  sunShaftBlurRadius: 1.5
+  sunShaftIntensity: 1.15
+  maxRadius: 0.3
+  useDepthTexture: 1
+  sunShaftsShader: {fileID: 4800000, guid: d3b1c8c1036784176946f5cfbfb7fe4c, type: 3}
+  simpleClearShader: {fileID: 4800000, guid: f688f89ed5eb847c5b19c934a0f1e772, type: 3}
 --- !u!124 &12412256
 Behaviour:
   m_ObjectHideFlags: 1
