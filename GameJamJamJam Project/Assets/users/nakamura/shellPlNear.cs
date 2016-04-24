@@ -6,7 +6,7 @@ public class shellPlNear : MonoBehaviour {
 	public Vector3 dir;
 	public Vector3 initDir;
 	public float speed = 0.5f;
-	public int ttl = 3;
+	public float ttl = 0.5f;
 	public int power = 5;
 
 	// Use this for initialization
@@ -16,12 +16,13 @@ public class shellPlNear : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		ttl -= 1;
-		if (ttl < 0) {
+		ttl -= Time.deltaTime;
+		Debug.Log (ttl.ToString ());
+		if (ttl <= 0.0f) {
 			Destroy (this.gameObject);
 		}
 
-		transform.position += dir * speed;
+		transform.position += dir * speed * Time.deltaTime;
 	}
 
 	void OnCollisionEnter(Collision other)
