@@ -184,7 +184,7 @@ public class PlayerController: MonoBehaviour
         {
             dir.y += _gravity * Time.deltaTime;
 
-            if (Input.GetKey(KeyCode.Space))
+			if ( Input.GetButton("Jump"))
             {
                 dir.y += _jumpHoldSpeed * Time.deltaTime;
             }
@@ -200,7 +200,8 @@ public class PlayerController: MonoBehaviour
         // Jump
         if ( IsCanJump() )
         {
-			if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+			if(Input.GetButtonDown("Jump"))
+			//if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
             {
                 dir.y = _jumpFirstSpeed;
                 jumpAudio.Play();
