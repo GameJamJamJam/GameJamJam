@@ -273,7 +273,7 @@ public class PlayerController: MonoBehaviour
     {
         _isCanAttackFar = false;
 
-		int shotBullet = Levels [(int)item.eExpType.ShotBullet];
+		int shotBullet = Levels [(int)item.eExpType.ShotPow];
 		float wait = 0.2f - shotBullet * 0.002f;
 		if (wait < 0.01f) {
 			wait = 0.01f;
@@ -294,11 +294,8 @@ public class PlayerController: MonoBehaviour
 		playerObj = GameObject.Find ("Player");
 		playerPos = playerObj.transform.position;
 
-		int meleeHit = Levels [(int)item.eExpType.MeleeHit];
+		int meleeHit = Levels [(int)item.eExpType.MeleePow];
 		int meleePow = Levels [(int)item.eExpType.MeleePow]+1;
-
-		Debug.Log (meleeHit.ToString());
-		Debug.Log (meleePow.ToString());
 
 		int numShell = 3 + meleeHit * 2;
 		float maxDeg = 60.0f + meleeHit * 5;
@@ -336,7 +333,7 @@ public class PlayerController: MonoBehaviour
 		playerObj = GameObject.Find ("Player");
 		playerPos = playerObj.transform.position;
 
-		int shotBullet = Levels [(int)item.eExpType.ShotBullet];
+		int shotBullet = Levels [(int)item.eExpType.ShotPow];
 		int shotPow = Levels [(int)item.eExpType.ShotPow]+1;
 
 
