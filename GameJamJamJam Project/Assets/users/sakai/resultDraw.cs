@@ -10,8 +10,12 @@ public class resultDraw : MonoBehaviour {
 	
 		mSceneMng =	GameObject.Find ("SceneMng").GetComponent<sceneMng>();
 
+		GameObject textObj = GameObject.Find ("score");
+		if (textObj) {
+			textObj.GetComponent<Text> ().text = mSceneMng.getLastScore () + "点";
+		}
 		GameObject.Find ("highScore").GetComponent<Text> ().text = mSceneMng.getHighScore () + "点";
-		GameObject.Find ("score").GetComponent<Text> ().text = mSceneMng.getLastScore () + "点";
+
 
 	}
 	
