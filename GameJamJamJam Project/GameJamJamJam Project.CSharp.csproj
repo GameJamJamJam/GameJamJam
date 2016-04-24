@@ -96,6 +96,7 @@
     <Compile Include="Assets\users\egami\bulletNum.cs" />
     <Compile Include="Assets\users\egami\exp.cs" />
     <Compile Include="Assets\users\egami\hpGauge.cs" />
+    <Compile Include="Assets\users\egami\hpString.cs" />
     <Compile Include="Assets\users\egami\levelGauge.cs" />
     <Compile Include="Assets\users\egami\mpGauge.cs" />
     <Compile Include="Assets\users\egami\status.cs" />
