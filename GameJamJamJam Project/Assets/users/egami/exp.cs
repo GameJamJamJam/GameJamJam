@@ -13,7 +13,7 @@ namespace AssemblyCSharp
 		public exp ()
 		{
 			level = 1;
-			next = 7;
+			next = 1;
 			step = next;
 		}
 
@@ -27,7 +27,7 @@ namespace AssemblyCSharp
 				level++;
 				sub -= next;
 
-				step += (int)(next * 0.5f);
+				//step += (int)(next * 0.1f);
 				next += step;
 
 				levelUp = true;

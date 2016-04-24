@@ -23,7 +23,12 @@ public class spawnMng : MonoBehaviour {
 		const int maxLv = 10;
 		currentLv = Mathf.Clamp (currentLv, 0, mSpawnNum.Length-1);
 
-		return (mSpawnNum[currentLv] > mEnemyNum);
+		if (currentLv + 5 > 200) {
+			return (200 > mEnemyNum);
+		} else {
+			return (currentLv + 5 > mEnemyNum);
+		}
+		//return (mSpawnNum[currentLv] > mEnemyNum);
 	}
 
 	public void addEnemyNm()
