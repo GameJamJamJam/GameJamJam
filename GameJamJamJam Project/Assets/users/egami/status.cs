@@ -75,6 +75,18 @@ public class status : MonoBehaviour {
 			}
 		}
 
+		switch (expType) {
+		case item.eExpType.Jump:
+			GameObject.Find ("LevelGauge1").GetComponent<levelGauge> ().setDisplayTime (1.8f);
+			break;
+		case item.eExpType.MeleePow:
+			GameObject.Find ("LevelGauge2").GetComponent<levelGauge> ().setDisplayTime (1.8f);
+			break;
+		case item.eExpType.ShotPow:
+			GameObject.Find ("LevelGauge3").GetComponent<levelGauge> ().setDisplayTime (1.8f);
+			break;
+		}
+
         GetSEAudio.Play();
 
     }
