@@ -44,6 +44,15 @@ public class hpGauge : MonoBehaviour {
 					refText.text += "★";
 				}
 			}
+
+			if (0.0f < refHpString.GetComponent<hpString> ().displayTime) {
+				this.GetComponent<CanvasRenderer> ().SetAlpha (1.0f);
+			} else {
+				this.GetComponent<CanvasRenderer> ().SetAlpha (0.0f);
+			}
 		}
 	}
+
 }
+
+

@@ -36,5 +36,8 @@ public class PlayerLifeManager : MonoBehaviour {
         _life -= value;
 
         PlController.PlayDamageVoice();
+
+		// add by egami
+		GameObject.Find("HpString").GetComponent<hpString>().setDisplayTime(2.0f);
     }
 }

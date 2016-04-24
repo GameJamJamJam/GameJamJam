@@ -35,3 +35,4 @@ C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\
 C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
 C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\obj\Debug\Assembly-CSharp-Editor.dll
 C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\obj\Debug\Assembly-CSharp-Editor.pdb
+C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\JMOAssets.dll
