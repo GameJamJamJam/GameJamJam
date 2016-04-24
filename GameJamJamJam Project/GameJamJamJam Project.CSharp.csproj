@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -78,6 +72,7 @@
     <Compile Include="Assets\Elf\Script\Elf_Manager.cs" />
     <Compile Include="Assets\Elf\Script\Manager.cs" />
     <Compile Include="Assets\Simple Particle Ribbon\Scripts\ReverseNormals.cs" />
+    <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
     <Compile Include="Assets\users\egami\bulletNum.cs" />
     <Compile Include="Assets\users\egami\exp.cs" />
     <Compile Include="Assets\users\egami\hpGauge.cs" />
@@ -93,9 +88,12 @@
     <Compile Include="Assets\users\okada\Script\PlayerLifeManager.cs" />
     <Compile Include="Assets\users\okada\Script\PlayerMeshController.cs" />
     <Compile Include="Assets\users\sakai\camera.cs" />
+    <Compile Include="Assets\users\sakai\deadLine.cs" />
     <Compile Include="Assets\users\sakai\enemy.cs" />
     <Compile Include="Assets\users\sakai\item.cs" />
+    <Compile Include="Assets\users\sakai\resultDraw.cs" />
     <Compile Include="Assets\users\sakai\sceneMng.cs" />
+    <Compile Include="Assets\users\sakai\spawnMng.cs" />
     <Compile Include="Assets\users\sakai\spawner.cs" />
   </ItemGroup>
   <ItemGroup>
