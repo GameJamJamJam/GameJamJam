@@ -9,6 +9,7 @@ public class hpGauge : MonoBehaviour {
 	public Vector3 offset;
 	public status refPlayerStatus;
 	public GameObject refPlayer;
+	public PlayerLifeManager refLifeManager;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,7 @@ public class hpGauge : MonoBehaviour {
 			refPlayerStatus = tmp.GetComponent<status>();
 		}
 		refPlayer = GameObject.Find ("Player");
+		refLifeManager = GameObject.Find ("Player").GetComponent<PlayerLifeManager> ();
 	}
 
 	// Update is called once per frame
@@ -43,9 +45,11 @@ public class hpGauge : MonoBehaviour {
 				}
 			}
 
-			if (0.0f < refHpString.GetComponent<hpString> ().displayTime) {
+			float displayTime = refHpString.GetComponent<hpString> ().displayTime;
+			if (0.0f < displayTime) {
 				this.GetComponent<CanvasRenderer> ().SetAlpha (1.0f);
-			} else {
+			}
+			if (displayTime <= 0.0f && refHpString.GetComponent<hpString> ().alwaysDisplayBeginLife < refLifeManager.Life ) {
 				this.GetComponent<CanvasRenderer> ().SetAlpha (0.0f);
 			}
 		}

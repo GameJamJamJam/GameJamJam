@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class hpString : MonoBehaviour {
 
 	public float displayTime;
+	///public status refStatus;
+	public PlayerLifeManager refLifeManager;
+	public int alwaysDisplayBeginLife = 3;
 	//public Camera refMainCamera;
 	//public GameObject refPlayer;
 	//public Canvas refCanvas;
@@ -12,6 +15,8 @@ public class hpString : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		displayTime = 0.0f;
+		///refStatus = GameObject.Find ("Stauts").GetComponent<status> ();
+		refLifeManager = GameObject.Find ("Player").GetComponent<PlayerLifeManager> ();
 		//refMainCamera = (Camera)GameObject.Find ("Main Camera").GetComponent<Camera>();
 		//refPlayer = GameObject.Find ("Player");
 		//refCanvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
@@ -23,7 +28,7 @@ public class hpString : MonoBehaviour {
 			displayTime -= Time.deltaTime;
 			this.GetComponent<CanvasRenderer> ().SetAlpha(1.0f);
 		}
-		if (displayTime <= 0.0f) {
+		if (displayTime <= 0.0f && alwaysDisplayBeginLife < refLifeManager.Life ) {
 			this.GetComponent<CanvasRenderer> ().SetAlpha(0.0f);
 		}
 		#if TRUE
