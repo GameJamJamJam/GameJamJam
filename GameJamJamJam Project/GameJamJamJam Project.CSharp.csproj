@@ -71,6 +71,10 @@
   <ItemGroup>
     <Compile Include="Assets\Elf\Script\Elf_Manager.cs" />
     <Compile Include="Assets\Elf\Script\Manager.cs" />
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Player\FPSWalkerEnhanced.cs" />
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Player\SmoothMouseLook.cs" />
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Skybox\SkyboxChanger.cs" />
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Skybox\SkyboxRotator.cs" />
     <Compile Include="Assets\JMO Assets\Toony Colors\Demo 2.0\TCF_Demo.cs" />
     <Compile Include="Assets\Simple Particle Ribbon\Scripts\ReverseNormals.cs" />
     <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
@@ -121,9 +125,6 @@
     <None Include="Assets\JMO Assets\Toony Colors\Shaders 2.0\Rim Outline.shader" />
     <None Include="Assets\KY_effects\MagicEffectsPackFree\ReadMe.txt" />
     <None Include="Assets\Simple Particle Ribbon\readme_Simple_Particle_Ribbon.txt" />
-    <None Include="Assets\SimplePhysicalShader\SimplePhysicalShader.shader" />
-    <None Include="Assets\SimplePhysicalShader\SimplePhysicalShaderCoat.shader" />
-    <None Include="Assets\SimplePhysicalShader\SimplePhysicalShaderRetro.shader" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
