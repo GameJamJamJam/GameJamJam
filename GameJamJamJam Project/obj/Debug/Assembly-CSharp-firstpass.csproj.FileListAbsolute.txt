@@ -1,6 +1,5 @@
-C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
-C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\Assembly-CSharp.dll
-C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\UnityEditor.dll
 C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\UnityEngine.dll
 C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\UnityEngine.Networking.dll
@@ -17,6 +16,6 @@ C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\
 C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\UnityEditor.xml
 C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\UnityEngine.Networking.xml
-C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\obj\Debug\Assembly-CSharp.dll
-C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\obj\Debug\Assembly-CSharp.pdb
-C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
+C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\obj\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Kenta\Documents\GitHub\GameJamJam\GameJamJamJam Project\obj\Debug\Assembly-CSharp-firstpass.pdb

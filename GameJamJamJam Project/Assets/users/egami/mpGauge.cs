@@ -14,7 +14,7 @@ public class mpGauge : MonoBehaviour {
 	void Start () {
 		refString = GameObject.Find ("MpString");
 		refText = GetComponent ("Text") as Text;
-		offset.x = 28;
+		offset.x = 36;
 		offset.y = 1;
 		GameObject tmp = GameObject.Find ("PlayerStatus");
 		if (tmp) {
