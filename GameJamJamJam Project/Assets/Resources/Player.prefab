@@ -1678,6 +1678,7 @@ GameObject:
   - 82: {fileID: 8281410}
   - 82: {fileID: 8209106}
   - 82: {fileID: 8231400}
+  - 114: {fileID: 11421946}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -3933,6 +3934,18 @@ MonoBehaviour:
   edgesOnly: 0
   edgesOnlyBgColor: {r: 0.097750865, g: 0.8308824, b: 0.70953655, a: 1}
   edgeDetectShader: {fileID: 4800000, guid: 0d1644bdf064147baa97f235fc5b4903, type: 3}
+--- !u!114 &11421946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad65a03e2ba19b346ad04e5fcb9723f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationPerSecond: 3
 --- !u!114 &11421962
 MonoBehaviour:
   m_ObjectHideFlags: 1
