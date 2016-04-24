@@ -91,4 +91,9 @@ public class sceneMng : MonoBehaviour {
 			PlayerPrefs.SetInt ("HightScore", mScore);
 		}
 	}
+
+	public int getNowScore()
+	{
+		return mScore;
+	}
 }

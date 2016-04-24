@@ -6,7 +6,7 @@ public class shellPlFar : MonoBehaviour {
 	public Vector3 dir;
 	public Vector3 initDir;
 	public float speed = 0.3f;
-	public int ttl = 60;
+	public float ttl = 60;
 	public int power = 1;
 
 	// Use this for initialization
@@ -16,12 +16,12 @@ public class shellPlFar : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		ttl -= 1;
+		ttl -= Time.deltaTime;
 		if (ttl < 0) {
 			Destroy (this.gameObject);
 		}
 
-		transform.position += dir * speed;
+		transform.position += dir * speed * Time.deltaTime;
 	}
 
 	void OnCollisionEnter(Collision other)
