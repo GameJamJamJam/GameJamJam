@@ -21,7 +21,7 @@ public class spawner : MonoBehaviour {
 		randExpType ();
 		mSpawnMng = GameObject.Find ("Spawners").GetComponent<spawnMng> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		mSpawnTimer -= Time.deltaTime;
@@ -33,12 +33,35 @@ public class spawner : MonoBehaviour {
 
 			if (mSpawnMng.isCanSpawn ()) {
 				mSpawnMng.addEnemyNm ();
+				PlayerController mPlCtrl = GameObject.Find ("Player").GetComponent<PlayerController> ();
+				int sumLv = mPlCtrl.SumLevel;
 				GameObject obj = Instantiate (Resources.Load ("Enemy"), transform.position, Quaternion.identity) as GameObject;
 				obj.transform.parent = GameObject.Find ("Enemies").gameObject.transform;
 				obj.GetComponent<enemy> ().ExpType = mExpType;
 				obj.GetComponent<enemy> ().EnemyType = SpawnEnemyType;
-				obj.GetComponent<enemy> ().Life = numCreated * 3;
-				obj.GetComponent<enemy> ().Spd += numCreated * 0.2f; 
+				obj.GetComponent<enemy> ().Life = sumLv * sumLv;
+				obj.GetComponent<enemy> ().Spd += numCreated * 0.05f;
+
+				if (mSpawnMng.isFastOrder ()) {
+					changeScale (obj,0.3f);
+					obj.GetComponent<enemy> ().Life /= 2;
+					obj.GetComponent<enemy> ().Spd += 5.0f;
+					Debug.Log ("fast pop");
+
+				}
+
+				if (mSpawnMng.isBossOrder ()) {
+					changeScale (obj,2.0f);
+					obj.GetComponent<enemy> ().Life *= 20;
+					if (!mSpawnMng.isFastOrder ()) {
+						obj.GetComponent<enemy> ().Spd = 1.0f;
+					}
+					obj.GetComponent<enemy> ().IsBoss = true;
+					Debug.Log ("boss pop");
+
+				}
+
+
 				numCreated++;
 
 				mSpawnChangeCount--;
@@ -53,5 +76,12 @@ public class spawner : MonoBehaviour {
 	void randExpType()
 	{
 		mExpType = (item.eExpType)Random.Range ((int)item.eExpType.Jump,(int)item.eExpType.Cam);
+	}
+
+	void changeScale(GameObject obj, float sizeRate)
+	{
+		Vector3 scale =		obj.transform.localScale;
+		scale *= sizeRate;
+		obj.transform.localScale = scale;
 	}
 }

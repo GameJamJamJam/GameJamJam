@@ -9,6 +9,8 @@ public class enemy : MonoBehaviour {
 	public item.eExpType ExpType = item.eExpType.Cam;
 	public GameObject[] DrawObjes = new GameObject[(int)item.eExpType.Max];
 
+	public bool IsBoss = false;
+
 	public enum eEnemyType
 	{
 		Normal,
