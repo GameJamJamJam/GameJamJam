@@ -21,7 +21,7 @@ public class PlayerChargeEffectManager : MonoBehaviour {
 	void Start ()
     {
         status = PlayerStatus.GetComponent<status>();
-
+        PlayerStatus = GameObject.Find("PlayerStatus");
     }
 	
 	// Update is called once per frame

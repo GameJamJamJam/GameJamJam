@@ -105,6 +105,8 @@ public class PlayerController: MonoBehaviour
     private bool _isCanAttackNear = true;
     private bool _isCanAttackFar = true;
 
+    public GameObject AttackEffect;
+
     /// <summary>
     /// Awake
     /// </summary>
@@ -372,6 +374,8 @@ public class PlayerController: MonoBehaviour
             voiceAudio.Play();
         }
         attackSE.Play();
+
+        //Instantiate(AttackEffect, transform.position, Quaternion.identity);
     }
 
     public void PlayDamageVoice()
