@@ -73,6 +73,21 @@
     <Compile Include="Assets\Elf\Script\Manager.cs" />
     <Compile Include="Assets\Simple Particle Ribbon\Scripts\ReverseNormals.cs" />
     <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Demo\Scripts\SC_ClickButton.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Demo\Scripts\SC_EffectsModeDemo.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Demo\Scripts\SC_ToggleButton.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Demo\Scripts\SC_Translate.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Scripts\Helpers\SC_Helper.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Scripts\SC_Billboard.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Scripts\SC_FadeOut.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Scripts\SC_OnClickGround.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Scripts\SC_Projectile.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Scripts\SC_RandomDirection.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Scripts\SC_Rotation.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Scripts\SC_ScaleOverTime.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Scripts\SC_Siny.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Scripts\SC_SpawnSpellLocationGround.cs" />
+    <Compile Include="Assets\SpellCraft Assets\Scripts\SC_SpellDuration.cs" />
     <Compile Include="Assets\users\egami\bulletNum.cs" />
     <Compile Include="Assets\users\egami\exp.cs" />
     <Compile Include="Assets\users\egami\hpGauge.cs" />
@@ -107,6 +122,7 @@
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+    <None Include="Assets\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
