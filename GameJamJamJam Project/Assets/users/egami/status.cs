@@ -12,6 +12,7 @@ public class status : MonoBehaviour {
 
 	public exp[] expArray;
 
+    public AudioSource GetSEAudio;
 
 	private item.eExpType mLastKillExp;
 	private int mKillStreak;
@@ -47,7 +48,10 @@ public class status : MonoBehaviour {
 		}
 
 		mLastKillExp = item.eExpType.None;
-	}
+
+        GetSEAudio = gameObject.GetComponent<AudioSource>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -70,5 +74,8 @@ public class status : MonoBehaviour {
 				tmpPlayer.GetComponent<PlayerController>().LevelUpStatus( expType );
 			}
 		}
-	}
+
+        GetSEAudio.Play();
+
+    }
 }
