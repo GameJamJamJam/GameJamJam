@@ -300,8 +300,8 @@ public class PlayerController: MonoBehaviour
 		int meleeHit = Levels [(int)item.eExpType.MeleePow];
 		int meleePow = Levels [(int)item.eExpType.MeleePow]+1;
 
-		int numShell = 2 + meleeHit / 2;
-		float maxDeg = 30.0f + meleeHit * 5;
+		int numShell = 2 + meleeHit / 5;
+		float maxDeg = 30.0f + meleeHit;
 		float deltaDeg = maxDeg / (numShell-1);
 
 		for (int i = 0; i < numShell; i++) {

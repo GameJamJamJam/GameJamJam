@@ -34,7 +34,7 @@ public class item : MonoBehaviour {
 
 		mPlayerObj = GameObject.Find ("Player");
 
-		mSpeed = 6.0f * Random.Range (0.5f, 1.0f);
+		mSpeed = 10.0f * Random.Range (0.5f, 1.0f);
 	}
 
 

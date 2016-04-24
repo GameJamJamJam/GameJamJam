@@ -19,7 +19,12 @@ public class damageEffect : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		GameObject tmpPlayer = GameObject.Find ("Player");
+
+		int levelJump = tmpPlayer.GetComponent<PlayerController>().Levels[(int)item.eExpType.Jump];
+		this.gameObject.GetComponent<TextMesh> ().characterSize = 0.5f + 0.05f * levelJump;
+
 		transform.position += dir * speed;
 		dir.y -= acc;
 
